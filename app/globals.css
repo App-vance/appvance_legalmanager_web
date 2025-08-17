@@ -16,41 +16,37 @@
   --color-orange: #E8911F;
 }
 
-@layer utilities {
-  .text-title {
-    @apply text-[2rem] font-extrabold leading-[6.875rem] md:text-[4rem];
-  }
-
-  .text-subtitle {
-    @apply text-[1.5rem] font-semibold leading-[6.875rem] md:text-[2.25rem];
-  }
-
-  .text-features {
-    @apply text-[1.25rem] font-bold leading-[5rem] md:text-[1.5rem];
-  }
-
-  .text-body {
-    @apply text-[1rem] font-medium leading-[6.25rem] md:text-[1.25rem];
-  }
-
-  .text-body-secondaty {
-    @apply text-[1.125rem] font-normal leading-[2.5rem];
-  }
-
-  .text-button {
-    @apply text-[1rem] font-bold leading-[6.25rem] md:text-[1.25rem];
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-bg {
+  background-image: url('/img/hero.jpg');
+  height: 615px;
+  background-size: cover;
+  background-position: center;
+}
+
+@layer utilities {
+  .text-title {
+    @apply text-[2rem] leading-9 font-extrabold md:text-[4rem] lg:leading-[4.375rem] tracking-normal;
+  }
+
+  .text-subtitle {
+    @apply text-[1.5rem] leading-[1.875rem] font-semibold md:text-[2.25rem] lg:leading-10 tracking-normal;
+  }
+
+  .text-features {
+    @apply text-[1.25rem] leading-[1.375rem] font-bold md:text-[1.5rem] lg:leading-[1.875rem] tracking-normal;
+  }
+
+  .text-body {
+    @apply text-[1rem] leading-[1.125rem] font-medium tracking-normal;
+  }
+
+  .text-button {
+    @apply text-[1rem] leading-[1.125rem] font-bold md:text-[1.25rem] lg:leading-[1.5rem] tracking-normal;
+  }
 }
