@@ -36,6 +36,10 @@
   .text-body-secondaty {
     @apply text-[1.125rem] font-normal leading-[2.5rem];
   }
+
+  .text-button {
+    @apply text-[1rem] font-bold leading-[6.25rem] md:text-[1.25rem];
+  }
 }
 
 @media (prefers-color-scheme: dark) {
