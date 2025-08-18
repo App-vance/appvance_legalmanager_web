@@ -6,22 +6,22 @@ import { navigationLinks } from '@/helpers/nav'
 const Header = () => {
   return (
     <header className='flex items-center justify-between bg-[#001970] text-white text-body px-28 py-11'>
-        <Image
-          src="/logoWhite.svg"
-          alt="Appvance Legal Manager Logo"
-          width={200}
-          height={33}
-          className='object-contain'
-        />
-        <nav>
-            <ul className='flex gap-9'>
-                {navigationLinks.map((link) => (
-                    <li key={link.name} >
-                        {link.name}
-                    </li>
-                ))}
-            </ul>
-        </nav>
+      <Image
+        src="/logoWhite.svg"
+        alt="Appvance Legal Manager Logo"
+        width={200}
+        height={33}
+        className='object-contain'
+      />
+      <nav>
+        <ul className='flex gap-9'>
+          {navigationLinks.map((link) => (
+            <li key={link.name} className='text-body' >
+              {link.name}
+            </li>
+          ))}
+        </ul>
+      </nav>
     </header>
   )
 }
