@@ -14,6 +14,7 @@
   --color-secondary-blue: #155DFC;
   --color-gray: #8A8A8A;
   --color-orange: #E8911F;
+  --color-blue-light: #F1FAFF;
 }
 
 body {
@@ -25,6 +26,13 @@ body {
 .hero-bg {
   background-image: url('/img/hero.jpg');
   height: 615px;
+  background-size: cover;
+  background-position: center;
+}
+
+.about-bg{
+  background-image: url('/img/about.jpg');
+  height: 680px;
   background-size: cover;
   background-position: center;
 }
