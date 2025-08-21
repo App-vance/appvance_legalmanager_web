@@ -1,4 +1,5 @@
 import CardService from "@/components/CardService";
+import { BriefcaseIcon, DocumentTextIcon } from "@heroicons/react/24/outline";
 
 export default function Services() {
   return (
@@ -10,8 +11,37 @@ export default function Services() {
           <div className="w-8 h-1 bg-secondary-blue"></div>
           <p>Te respaldamos con asesoría integral en lo jurídico, contable y administrativo, asegurando confianza y estabilidad en cada decisión.</p>
         </div>
-        <div className="px-5 py-8">
-          <CardService />
+        <div className="flex flex-col gap-8 px-8 py-10">
+          <CardService
+            title="Área Administrativa"
+            description="Los enfoques están dados por nuestras diferentes áreas de gestión tales como:"
+            icon={<BriefcaseIcon className="h-8 w-8 stroke-2 mb-4 mx-auto text-secondary-blue" />}
+            items={[
+              "Área operativa",
+              "Área de mantenimientos",
+              "Área de talento humano",
+              "Área jurídica",
+              "Área financiera",
+              "Área contable",
+              "Área de dirección",
+              "Área de Control"
+            ]}
+          />
+          <CardService
+            title="Área Jurídica"
+            description="Los enfoques están dados por nuestras diferentes áreas de gestión tales como:"
+            icon={<DocumentTextIcon className="h-8 w-8 stroke-2 mb-4 mx-auto text-secondary-blue" />}
+            items={[
+              "Área operativa",
+              "Área de mantenimientos",
+              "Área de talento humano",
+              "Área jurídica",
+              "Área financiera",
+              "Área contable",
+              "Área de dirección",
+              "Área de Control"
+            ]}
+          />
         </div>
       </section>
     </>

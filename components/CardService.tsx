@@ -1,7 +1,40 @@
-export default function CardService() {
+import Button from "@/components/Button";
+import { ArrowTurnUpLeftIcon } from "@heroicons/react/24/outline";
+import { CheckIcon } from '@heroicons/react/20/solid';
+import React from 'react'
+
+type CardServiceProps = {
+  title: string;
+  description: string;
+  items: string[];
+  icon?: React.ReactNode;
+}
+
+const CardService = ({ title, description, items, icon }: CardServiceProps) => {
   return (
     <>
-      <div className="border rounded-lg py-8">cardddddd</div>
+      <div className="ring ring-[#001970] rounded-lg py-8">
+        {icon}
+        <h1 className="text-center text-features text-secondary-blue mb-4">{title}</h1>
+        <p className="text-center text-body px-6 mb-5">{description}</p>
+        <ul className='flex flex-col gap-3 px-12 mb-5'>
+          {items.map((item, index) => (
+            <li key={index} className='flex gap-6 items-center text-body text-gray'>
+              <span>
+                <CheckIcon className='w-5 h-5 text-secondary-blue' />
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <Button
+          text="Conoce más aquí."
+          customClass="mx-12 text-button ring ring-secondary-blue bg-white flex-row-reverse !text-secondary-blue"
+          icon={<ArrowTurnUpLeftIcon className="h-6 w-6" />}
+        />
+      </div>
     </>
   );
-}
+};
+
+export default CardService;
