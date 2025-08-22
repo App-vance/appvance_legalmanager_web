@@ -56,7 +56,7 @@ export default function Info() {
             </div>
           </div>
         </div>
-        <div className="relative px-0 w-full h-[350px] lg:flex-1 lg:h-full lg:my-auto">
+        <div className="relative px-0 w-full h-[350px] lg:flex-1 lg:h-[500px] ">
           <Image
             src="/img/image-legal-manager-info.webp"
             alt="Ejemplo"
