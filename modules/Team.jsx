@@ -4,8 +4,8 @@ import SimpleCardTeam from "@/components/SimpleCardTeam";
 const Team = () => {
   return (
     // Necesito que quede centrado el contenido
-    <div className="mx-auto pt-44 pb-32 flex flex-col items-center gap-10 max-w-7xl w-full">
-      <div className="flex gap-10 justify-between">
+    <div className="pt-44 pb-32 flex flex-col items-center gap-10 xl:px-56 xl:min-w-3xl">
+      <div className="flex w-full justify-between gap-10">
         <CardTeam
           name="Diego Mauricio Sierra Arango"
           position="Gerente General"
@@ -23,7 +23,7 @@ const Team = () => {
         <div className="w-sm bg-gray-100">         
         </div>
       </div>
-      <div className="flex gap-10">
+      <div className="flex w-full gap-10">
          <CardTeam
             name="Adriana María Sánchez Murillo"
             position="Contadora"
@@ -44,7 +44,7 @@ const Team = () => {
             ]}
         />
       </div>
-      <div className="flex gap-8">
+      <div className="flex w-full gap-8 justify-between">
         <SimpleCardTeam
           name="Andrea Castaño Gómez"
           position="Asistente Administrativo"

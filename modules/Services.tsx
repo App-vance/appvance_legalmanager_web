@@ -4,7 +4,7 @@ import { BriefcaseIcon, DocumentTextIcon, CurrencyDollarIcon, Squares2X2Icon } f
 export default function Services() {
   return (
     <>
-      <section className="flex flex-col lg:px-24 lg:py-20">
+      <section className="flex flex-col lg:pl-24 xl:pl-56 lg:py-20">
         <div className="flex flex-col items-center gap-3 text-white text-center bg-primary-blue h-fit p-8 lg:p-0 lg:text-start lg:bg-white lg:text-primary-blue lg:items-start">
           <h1 className="text-body-secondary">¿Qué te ofrecemos?</h1>
           <h2 className="text-subtitle lg:max-w-[30.625rem]">Servicios jurídicos, contables y administrativos.</h2>
