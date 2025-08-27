@@ -4,6 +4,7 @@ import Info from "@/modules/Info";
 import Services from "@/modules/Services";
 import About from "@/modules/About";
 import Team from "@/modules/Team";
+import TeamCarousel from "@/modules/TeamCarousel";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Services />
       <About />
       <Team />
+      <TeamCarousel />
     </>
   );
 }

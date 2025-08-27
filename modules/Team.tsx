@@ -4,7 +4,7 @@ import SimpleCardTeam from "@/components/SimpleCardTeam";
 const Team = () => {
   return (
     // Necesito que quede centrado el contenido
-    <div className="pt-44 pb-32 flex flex-col items-center gap-10 xl:px-56 xl:min-w-3xl">
+    <div className="hidden pt-44 pb-32 lg:flex flex-col items-center gap-10 xl:px-56 xl:min-w-3xl">
       <div className="flex w-full justify-between gap-10">
         <CardTeam
           name="Diego Mauricio Sierra Arango"

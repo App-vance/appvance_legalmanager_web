@@ -1,19 +1,42 @@
-import React from 'react'
+"use client"
+
+import React, { useState } from 'react'
+import { Bars3Icon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 
+
 import { navigationLinks } from '@/helpers/nav'
+import Drawer from '@/components/Drawer'
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
+  }
+
   return (
-    <header className='flex justify-between xl:px-56 items-center bg-[#001970] text-white text-body py-11'>
-      <Image
-        src="/logoWhite.svg"
-        alt="Appvance Legal Manager Logo"
-        width={200}
-        height={33}
-        className='object-contain'
-      />
-      <nav>
+    <>
+    <header className='flex justify-between px-8 py-10 lg:px-56 items-center bg-[#001970] text-white text-body lg:py-11'>
+      <div className='w-44 h-9 lg:w-52 relative'>
+        <Image
+          src="/logoWhite.svg"
+          alt="Appvance Legal Manager Logo"
+          fill
+          priority
+          className='object-contain'
+        />
+      </div>
+      <div className='lg:hidden'>
+        {
+          !isOpen ? (
+            <Bars3Icon className='h-8 w-8 cursor-pointer text-white' onClick={toggleDrawer} />
+          ) : (
+            <p>X</p>
+          )
+        }
+      </div>
+      <nav className='hidden lg:block'>
         <ul className='flex gap-9'>
           {navigationLinks.map((link) => (
             <li key={link.name} className='text-body' >
@@ -23,6 +46,14 @@ const Header = () => {
         </ul>
       </nav>
     </header>
+    <Drawer isOpen={isOpen} toggleDrawer={toggleDrawer} />
+    {isOpen && (
+      <div
+        onClick={toggleDrawer}
+        className="fixed inset-0 bg-black opacity-50 z-20" // Z-index para que esté debajo del drawer
+      ></div>
+    )}
+    </>
   )
 }
 

@@ -37,6 +37,13 @@ body {
   background-position: center;
 }
 
+@media (max-width: 768px) {
+  .about-bg {
+    background-image: url('/img/about-mobile.jpg');
+    height: 350px;
+  }
+}
+
 @layer utilities {
   .text-title {
     @apply tracking-normal font-extrabold text-[2rem] leading-9 lg:text-[4rem] lg:leading-[4.375rem];
