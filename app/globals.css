@@ -68,4 +68,8 @@ body {
   .text-button {
     @apply tracking-normal font-bold text-[1rem] leading-[1.125rem] lg:text-xl lg:leading-6
   }
+
+  .text-small {
+    @apply tracking-normal text-sm font-medium leading-[1rem];
+  }
 }
