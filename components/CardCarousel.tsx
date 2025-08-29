@@ -7,20 +7,10 @@ type CardTeamProps = {
   qualifications: string[];
 }
 
-const items = [
-  "Abogado Universidad de Antioquia",
-  "Especialista Gestión Inmobiliaria Universidad Nacional",
-  "Especialista Derecho Procesal Universidad de Medellín",
-  "Especialista Responsabilidad Civil y del Estado Universidad Autónoma",
-  "Especialista Derecho de Seguros Universidad Javeriana",
-  "Conciliador en Derecho",
-  "Docente Universitario.",
-];
-
 const CardCarousel = ({ name, position, image, qualifications }: CardTeamProps) => {
   return (
     <>
-      <div className="bg-blue-light w-full rounded-lg overflow-hidden">
+      <div className="bg-blue-light w-full h-full rounded-lg overflow-hidden">
         <div className="relative w-full min-h-[13.125rem] max-h-[19.375rem]">
           <Image
             src={image}
@@ -38,7 +28,7 @@ const CardCarousel = ({ name, position, image, qualifications }: CardTeamProps) 
               {qualifications.map((item, index) => (
                 <div key={index} className="group flex gap-x-5">
                   <div className="relative">
-                    {index !== items.length - 1 && (
+                    {index !== qualifications.length - 1 && (
                       <div className="absolute left-1/2 top-0 h-full w-[1px] -translate-x-1/2 bg-secondary-blue"></div>
                     )}
                     <span className="relative z-10 grid h-1 w-1 place-items-center rounded-full bg-secondary-blue text-slate-800"></span>
