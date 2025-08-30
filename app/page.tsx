@@ -6,6 +6,7 @@ import About from "@/modules/About";
 import Team from "@/modules/Team";
 import TeamCarousel from "@/modules/TeamCarousel";
 import ConsultForm from "@/modules/ConsultForm";
+import Footer from "@/modules/Footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Team />
       <TeamCarousel />
       <ConsultForm />
+      <Footer />
     </>
   );
 }
