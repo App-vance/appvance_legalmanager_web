@@ -37,6 +37,22 @@ body {
   background-position: center;
 }
 
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #1976d2 #e3eafc; /* thumb color, track color */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+  background: #e3eafc; /* track color */
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #1976d2; /* thumb color */
+  border-radius: 8px;
+}
+
 @layer utilities {
   .text-title {
     @apply tracking-normal font-extrabold text-[2rem] leading-9 lg:text-[4rem] lg:leading-[4.375rem];
