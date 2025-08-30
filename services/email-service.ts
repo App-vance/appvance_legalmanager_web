@@ -19,7 +19,6 @@ export const sendEmail = async (
   templateId: string,
   templateParams: TemplateParams
 ): Promise<EmailJSResponseStatus> => {
-    console.log(serviceId, templateId, templateParams);
   try {
     const response = await emailjs.send(
       serviceId,
