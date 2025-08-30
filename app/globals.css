@@ -53,6 +53,13 @@ body {
   border-radius: 8px;
 }
 
+@media (max-width: 768px) {
+  .about-bg {
+    background-image: url('/img/about-mobile.jpg');
+    height: 350px;
+  }
+}
+
 @layer utilities {
   .text-title {
     @apply tracking-normal font-extrabold text-[2rem] leading-9 lg:text-[4rem] lg:leading-[4.375rem];
@@ -76,5 +83,9 @@ body {
 
   .text-button {
     @apply tracking-normal font-bold text-[1rem] leading-[1.125rem] lg:text-xl lg:leading-6
+  }
+
+  .text-small {
+    @apply tracking-normal text-sm font-medium leading-[1rem];
   }
 }
