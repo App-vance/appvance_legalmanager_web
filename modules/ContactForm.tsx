@@ -28,9 +28,17 @@ const ContactForm = () => {
 
     const formData = new FormData(e.currentTarget);
 
+    let messageContent = "";
+
+    if (formData.get("name")) {
+      messageContent += `<p><strong>Nombre:</strong> ${formData.get("name")}</p>`;
+    }
+    if (formData.get("phone")) {
+      messageContent += `<p><strong>Teléfono:</strong> ${formData.get("phone")}</p>`;
+    }
+
     const templateParams: TemplateParams = {
-      name: (formData.get("name") ?? "").toString(),
-      phone: (formData.get("phone") ?? "").toString(),
+      message: messageContent, // 🔑 ahora solo un campo
     };
 
     try {
