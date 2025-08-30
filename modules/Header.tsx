@@ -27,7 +27,7 @@ const Header = () => {
             className='object-contain'
           />
         </div>
-        <div className='lg:hidden'>
+        <div className='lg:hidden z-100'>
           {
             !isOpen ? (
               <Bars3Icon className='h-8 w-8 cursor-pointer text-white' onClick={toggleDrawer} />
