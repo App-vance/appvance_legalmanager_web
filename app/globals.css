@@ -53,6 +53,14 @@ body {
   border-radius: 8px;
 }
 
+.text-area {
+  resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+}
+
+.select-button[type="radio"] {
+  accent-color: #1976d2; /* Usa el color que prefieras */
+}
+
 @media (max-width: 768px) {
   .about-bg {
     background-image: url('/img/about-mobile.jpg');
