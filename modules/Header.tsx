@@ -15,6 +15,10 @@ const Header = () => {
     setIsOpen(!isOpen);
   }
 
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <header className='flex justify-between px-8 py-10 lg:px-56 items-center bg-[#001970] text-white text-body lg:py-11'>
@@ -39,8 +43,8 @@ const Header = () => {
         <nav className='hidden lg:block'>
           <ul className='flex gap-9'>
             {navigationLinks.map((link) => (
-              <li key={link.name} className='text-body' >
-                {link.name}
+              <li key={link.name} className='text-body'>
+                <button className='cursor-pointer hover:text-secondary-blue transition-colors duration-200' onClick={() => scrollToSection(link.href)}>{link.name}</button>
               </li>
             ))}
           </ul>
