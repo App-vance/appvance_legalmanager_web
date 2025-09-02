@@ -7,6 +7,7 @@ import Image from 'next/image'
 
 import { navigationLinks } from '@/helpers/nav'
 import Drawer from '@/components/Drawer'
+import Link from 'next/link'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -43,8 +44,10 @@ const Header = () => {
         <nav className='hidden lg:block'>
           <ul className='flex gap-9'>
             {navigationLinks.map((link) => (
-              <li key={link.name} className='text-body'>
-                <button className='cursor-pointer hover:text-secondary-blue transition-colors duration-200' onClick={() => scrollToSection(link.href)}>{link.name}</button>
+              <li key={link.name} className='text-body font-quicksand'>
+                <Link href={link.href}>
+                  <button className='cursor-pointer hover:text-secondary-blue transition-colors duration-200'>{link.name}</button>
+                </Link>
               </li>
             ))}
           </ul>

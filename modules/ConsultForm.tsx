@@ -70,7 +70,7 @@ const ConsultForm = () => {
   };
 
   return (
-    <div className="bg-blue-light">
+    <div className="bg-blue-light font-quicksand">
       <form
         onSubmit={handleSubmit}
         className="px-8 md:px-20 lg:px-56 py-14 lg:py-28 text-body flex gap-6 lg:gap-10 flex-col"

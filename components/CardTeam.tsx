@@ -12,7 +12,7 @@ type CardTeamProps = {
 
 const CardTeam = ({ name, position, image, qualifications }: CardTeamProps) => {
     return (
-        <div className='flex'>
+        <div className='flex font-quicksand'>
             <Image
                 src={image}
                 alt={name}

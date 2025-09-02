@@ -16,7 +16,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={`bg-secondary-blue text-white text-body px-6 lg:px-8 py-3 rounded-lg flex items-center gap-4 cursor-pointer ${customClass}`}
+      className={`font-quicksand bg-secondary-blue text-white text-body px-6 lg:px-8 py-3 rounded-lg flex items-center gap-4 cursor-pointer ${customClass}`}
       onClick={onClick}
     >
       {icon}

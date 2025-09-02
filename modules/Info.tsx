@@ -4,7 +4,7 @@ import { ExclamationCircleIcon, DocumentTextIcon, CurrencyDollarIcon, CreditCard
 export default function Info() {
   return (
     <>
-      <section className="bg-[#F1FAFF] flex flex-col justify-between lg:flex-row lg:p-24 xl:px-56 lg:gap-6">
+      <section className="font-quicksand bg-[#F1FAFF] flex flex-col justify-between lg:flex-row lg:p-24 xl:px-56 lg:gap-6">
         <div className="w-full px-9 md:px-20 py-16 lg:flex-1 lg:px-0 lg:py-0">
           <div className="flex flex-col gap-6 lg:gap-10">
             <div className="flex-1 border-b border-gray lg:border-none last:border-b-0 xl:max-w-[560px]">
