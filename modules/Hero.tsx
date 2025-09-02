@@ -7,12 +7,12 @@ import ContactForm from "@/modules/ContactForm";
 
 const Hero = () => {
   return (
-    <div className="hero-bg px-8 xl:px-56 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-20 py-24 text-white">
+    <div className="hero-bg px-8 md:px-20 lg:px-56 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-20 py-24 text-white">
       <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
         <h1 className="text-title lg:max-w-[650px]">
           Tu aliado legal en cada etapa de tu negocio y vida
         </h1>
-        <h3 className="text-body max-w-3xs lg:max-w-full py-4 lg:pt-6 lg:pb-9 lg:text-[1rem] lg:font-semibold lg:leading-[24px]">
+        <h3 className="text-body max-w-3xs md:max-w-80 lg:max-w-full py-4 lg:pt-6 lg:pb-9 lg:text-[1rem] lg:font-semibold lg:leading-[24px]">
           Asesoría integral en las principales áreas del derecho.
         </h3>
         <Button

@@ -5,7 +5,7 @@ export default function Info() {
   return (
     <>
       <section className="bg-[#F1FAFF] flex flex-col justify-between lg:flex-row lg:p-24 xl:px-56 lg:gap-6">
-        <div className="w-full px-9 py-16 lg:flex-1 lg:px-0 lg:py-0">
+        <div className="w-full px-9 md:px-20 py-16 lg:flex-1 lg:px-0 lg:py-0">
           <div className="flex flex-col gap-6 lg:gap-10">
             <div className="flex-1 border-b border-gray lg:border-none last:border-b-0 xl:max-w-[560px]">
               <div className="flex flex-col lg:flex-row lg:items-center lg:gap-10">
@@ -58,7 +58,7 @@ export default function Info() {
         </div>
         <div className="relative px-0 w-full h-[350px] lg:flex-1 lg:h-[500px] ">
           <Image
-            src="/img/image-legal-manager-info.webp"
+            src="/img/info.jpg"
             alt="Ejemplo"
             fill
             className="!rounded-none lg:rounded-lg lg:max-w-[632px] lg:max-h-full lg:ml-auto"

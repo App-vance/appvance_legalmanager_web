@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <>
-      <header className='flex justify-between px-8 py-10 lg:px-56 items-center bg-[#001970] text-white text-body lg:py-11'>
+      <header className='flex justify-between px-8 py-10 md:px-20 lg:px-56 items-center bg-[#001970] text-white text-body lg:py-11'>
         <div className='w-44 h-9 lg:w-52 relative'>
           <Image
             src="/logoWhite.svg"

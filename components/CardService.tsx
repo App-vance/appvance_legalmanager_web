@@ -41,7 +41,7 @@ const CardService = ({ title, description, customClass, items, icon }: CardServi
 
         <Button
           text="Conoce más aquí."
-          customClass="mx-12 text-button ring ring-secondary-blue bg-white flex-row-reverse !text-secondary-blue transition-colors hover:bg-secondary-blue hover:!text-white active:bg-white active:!text-secondary-blue lg:mx-0"
+          customClass="mx-auto md:mx-12 text-button ring ring-secondary-blue bg-white flex-row-reverse !text-secondary-blue transition-colors hover:bg-secondary-blue hover:!text-white active:bg-white active:!text-secondary-blue lg:mx-0"
           icon={<ArrowTurnUpLeftIcon className="h-6 w-6" />}
         />
       </div>

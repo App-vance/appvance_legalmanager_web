@@ -7,7 +7,7 @@ const About = () => {
       <div
         className="
           w-full bg-primary-blue text-white flex flex-col items-center text-center p-8 gap-3
-          lg:absolute lg:w-auto lg:left-0 lg:-bottom-20 lg:max-w-[718px] lg:p-8 lg:px-24 lg:py-[6.4rem] lg:flex-col lg:gap-8 lg:rounded-lg lg:text-left lg:items-start
+          lg:absolute lg:w-auto lg:left-0 lg:-bottom-20 lg:max-w-[718px] lg:p-8 md:px-20 lg:px-24 lg:py-[6.4rem] lg:flex-col lg:gap-8 lg:rounded-lg lg:text-left lg:items-start
         "
       >
         <h3 className="text-body-secondary">Quiénes somos</h3>
