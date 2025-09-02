@@ -146,7 +146,11 @@ const ConsultForm = () => {
               id="interest"
               name="interest"
               value={values.interest}
-              onChange={handleChange}
+              onChange={(e) => {
+                handleChange({
+                  target: { name: "interest", value: e.target.value },
+                } as React.ChangeEvent<HTMLInputElement>);
+              }}
             >
               <option value="" className="bg-blue-light">
                 Selecciona el área legal de tu caso
@@ -196,7 +200,11 @@ const ConsultForm = () => {
             name="message"
             placeholder="Cuéntanos los detalles de tu caso: situación actual, tipo de asesoría que necesitas, la urgencia y cualquier información importante."
             value={values.message}
-            onChange={handleChange}
+            onChange={(e) => {
+                handleChange({
+                  target: { name: "message", value: e.target.value },
+                } as React.ChangeEvent<HTMLInputElement>);
+              }}
           />
           {errors.message && (
             <p className="text-red-500 text-sm mt-1">{errors.message}</p>
