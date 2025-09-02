@@ -18,17 +18,17 @@ const CardService = ({ title, description, customClass, items, icon }: CardServi
       <div className="ring ring-[#155DFC] rounded-lg py-8 lg:max-h-[500px] lg:min-w-[500px] lg:p-8 lg:flex lg:flex-col lg:justify-between lg:items-start">
         <div className="text-center lg:text-start">
           {icon}
-          <h1 className="text-features text-secondary-blue mb-4 lg:text-subtitle">
+          <h1 className="font-inter text-features text-secondary-blue mb-4 lg:text-subtitle">
             {title}
           </h1>
-          <p className="text-body px-6 mb-5 lg:px-0 lg:text-body-secondary">
+          <p className="font-quicksand text-body px-6 mb-5 lg:px-0 lg:text-body-secondary">
             {description}
           </p>
           <ul className={`grid gap-3 px-12 mb-5 lg:px-0 lg:gap-y-4 ${customClass}`}>
             {items.map((item, index) => (
               <li
                 key={index}
-                className="flex gap-6 text-start items-center text-body-secondary text-gray lg:text-body-secondary lg:gap-x-4"
+                className="flex gap-6 text-start items-center text-body-secondary font-quicksand text-gray lg:text-body-secondary lg:gap-x-4"
               >
                 <span>
                   <CheckIcon className="w-5 h-5 text-secondary-blue" />

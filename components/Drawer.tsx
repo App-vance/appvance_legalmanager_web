@@ -27,7 +27,7 @@ const Drawer = ({ isOpen, toggleDrawer }: DrawerProps) => {
         <ul className="space-y-8 text-base flex flex-col gap-1">
           {
             navigationLinkMobile.map((link) => (
-              <li key={link.name} className='text-features' >
+              <li key={link.name} className='text-features font-quicksand' >
                 <Link href={link.href} onClick={toggleDrawer}>{link.name}</Link>
               </li>
             ))
