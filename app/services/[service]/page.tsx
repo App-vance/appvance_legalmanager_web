@@ -1,4 +1,6 @@
 import React from 'react'
+import { getServiceInfo } from '@/helpers/services';
+import ManagementAreas from '@/components/ManagementAreas';
 
 interface PageProps {
     params: {
@@ -8,9 +10,17 @@ interface PageProps {
 
 const page = ({ params }: PageProps) => {
     const service = params.service;
+    const serviceData = getServiceInfo[service];
 
     return (
-        <div>{service}</div>
+        <>
+            <ManagementAreas
+                image={serviceData.image}
+                title={serviceData.title}
+                description={serviceData.description}
+                gestion={serviceData.gestion}
+            />
+        </>
     )
 }
 

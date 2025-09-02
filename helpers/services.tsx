@@ -7,9 +7,51 @@ const SERVICES = {
 export const getServiceInfo = {
     [SERVICES.ADMIN]: {
         title: "Área Administrativa",
-        image: "/images/admin.jpg",
+        image: "/img/admin.webp",
         description: "La administración eficiente de copropiedades y empresas requiere confianza, responsabilidad y soluciones prácticas. Nuestro equipo ofrece una gestión integral que asegura la sostenibilidad, el crecimiento y la convivencia armónica en cada proyecto.",
         subdescription: "Gestión administrativa transparente y eficiente para su tranquilidad:",
+        gestion: [
+            {
+                id: "item1",
+                title: "Área operativa",
+                description: "Encargada de la coordinación diaria de las actividades de la copropiedad, asegurando el cumplimiento de procesos, la eficiencia en la prestación de servicios y el adecuado funcionamiento general.",
+            },
+            {
+                id: "item2",
+                title: "Área de mantenimientos",
+                description: "Responsable de planear, ejecutar y supervisar el mantenimiento preventivo y correctivo de las instalaciones, equipos y zonas comunes, garantizando la seguridad y conservación de los bienes.",
+            },
+            {
+                id: "item3",
+                title: "Área de talento humano",
+                description: "Se enfoca en la gestión del personal, contratación, capacitación y bienestar laboral, promoviendo un ambiente de trabajo armónico y productivo.",
+            },
+            {
+                id: "item4",
+                title: "Área jurídica",
+                description: "Asesora en la aplicación de la normatividad vigente, representación legal y gestión de trámites, asegurando el cumplimiento de las disposiciones legales y estatutarias.",
+            },
+            {
+                id: "item5",
+                title: "Área financiera",
+                description: "Se ocupa de la planeación, control y análisis de los recursos financieros, elaboración de presupuestos y optimización del manejo económico de la entidad.",
+            },
+            {
+                id: "item6",
+                title: "Área contable",
+                description: "Lleva el registro de las operaciones económicas, elaboración de estados financieros, cumplimiento de obligaciones tributarias y control contable en línea con la normatividad legal.",
+            },
+            {
+                id: "item7",
+                title: "Área de dirección",
+                description: "Concentra la toma de decisiones estratégicas, planificación de objetivos y la supervisión integral de las diferentes áreas de gestión.",
+            },
+            {
+                id: "item8",
+                title: "Área de control",
+                description: "Realiza la evaluación y seguimiento del cumplimiento de los procesos internos, promoviendo la mejora continua y la transparencia en la administración.",
+            },
+        ],
         asesoria: [
             {
                 title: "Servicios administrativos",
@@ -45,13 +87,25 @@ export const getServiceInfo = {
     },
     [SERVICES.CONTABLE]: {
         title: "Área Contable",
-        image: "/images/contable.jpg",
+        image: "/img/juridica.webp",
         description: "Gestión contable, soluciones y revisoría fiscal para garantizar transparencia, cumplimiento normativo y objetivos financieros organizacionales.",
         subdescription: "De acuerdo con la normatividad colombiana y las necesidades de cada cliente, nuestras labores abarcan:",
         gestion: [
-            "Auditoría",
-            "Revisoría fiscal",
-            "Contabilidad"
+            {
+                id: "item1",
+                title: "Auditoría",
+                description: "Consiste en la revisión independiente y sistemática de la información financiera y administrativa de la entidad. Busca garantizar la transparencia en la gestión, detectar posibles riesgos y proponer mejoras en los procesos internos.",
+            },
+            {
+                id: "item2",
+                title: "Revisoría fiscal",
+                description: "Vela por el cumplimiento de la normatividad legal, estatutaria y de los órganos de administración. Comprende la vigilancia de los estados financieros, la adecuada ejecución presupuestal, la verificación tributaria y la rendición de informes a la Asamblea.",
+            },
+            {
+                id: "item3",
+                title: "Contabilidad",
+                description: "Se enfoca en el registro, análisis y control de las operaciones económicas de la entidad. Incluye la preparación de estados financieros, la presentación de declaraciones tributarias y la implementación de sistemas contables acordes a la normatividad vigente.",
+            },
         ],
         asesoria: [
             {
@@ -89,14 +143,34 @@ export const getServiceInfo = {
     },
     [SERVICES.JURIDICA]: {
         title: "Área Jurídica",
-        image: "/images/juridica.jpg",
+        image: "/img/juridica.webp",
         description: "Nuestra experiencia abarca distintas ramas del derecho, ofreciendo soluciones integrales y confiables.",
         gestion: [
-            "Derecho civil",
-            "Derecho comercial",
-            "Derecho inmobiliario",
-            "Derecho laboral",
-            "Seguridad social"
+            {
+                id: "item1",
+                title: "Derecho civil",
+                description: "Comprende la elaboración y revisión de contratos civiles, toda actuación referente al derecho notarial, sucesiones, registro civil, derecho inmobiliario y elaboración de estudios de títulos, entre otros aspectos. Así mismo, incluye la asesoría y representación judicial ante casos de responsabilidad civil y extracontractual.",
+            },
+            {
+                id: "item2",
+                title: "Derecho comercial",
+                description: "Se centra en la asesoría y representación en actos de comercio, constitución de sociedades, elaboración de estatutos, procesos de liquidación, fusiones y adquisiciones, así como en la redacción y análisis de contratos mercantiles.",
+            },
+            {
+                id: "item3",
+                title: "Derecho inmobiliario",
+                description: "Abarca la estructuración, revisión y legalización de contratos de arrendamiento, compraventa y administración de bienes inmuebles; la validación de títulos de propiedad y la gestión de trámites ante entidades públicas y notariales.",
+            },
+            {
+                id: "item4",
+                title: "Derecho laboral",
+                description: "Enfocado en la relación empleador-trabajador: elaboración de contratos laborales, procesos de desvinculación, manejo de demandas laborales, conciliaciones y asesoría en políticas de seguridad industrial y salud en el trabajo.",
+            },
+            {
+                id: "item5",
+                title: "Seguridad social",
+                description: "Cobija la asesoría en afiliaciones, cotizaciones, pensiones, incapacidades, riesgos laborales y demás trámites relacionados con el Sistema General de Seguridad Social en Colombia, garantizando el cumplimiento normativo y la defensa de los derechos de los afiliados.",
+            },
         ],
         subdescription: "En cada una de estas áreas brindamos un portafolio completo de servicios legales, ajustados a tus necesidades.",
         asesoria: [
