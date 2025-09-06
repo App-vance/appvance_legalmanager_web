@@ -1,4 +1,4 @@
-import TitleMobile from "./TitleMobile"
+import SectionIntro from "./SectionIntro"
 interface Gestion {
   id: string,
   title: string,
@@ -26,14 +26,14 @@ const ManagementAreas = ({ image, title, description, gestion }: ManagementAreas
         </section>
 
         <section className='min-h-fit px-8 py-10 lg:pb-36 lg:pr-36 lg:pl-24 lg:pt-24'>
-            <TitleMobile title="Áreas de gestión:" />
+            <SectionIntro title="Áreas de gestión:" classTitle="text-subtitle text-primary-blue" />
             <div className='w-full'>
                 <div className="w-full mx-auto space-y-4 font-quicksand">
                     {
                         gestion?.map((el, index) => (
                             <div key={index} className="rounded-lg ring ring-[#D9D9D9] overflow-hidden">
                                 <input type="checkbox" id={el.id} className="peer hidden" />
-                                <label htmlFor={el.id} className="flex items-center justify-between py-4 px-6 bg-[#f5f5f5] text-secondary-blue text-features cursor-pointer">
+                                <label htmlFor={el.id} className="flex items-center justify-between py-4 px-6 bg-[#f9f8f8] text-secondary-blue text-features cursor-pointer">
                                     <span className="text-features text-secondary-blue">{el.title}</span>
                                     <svg className="w-6 h-6 transition-transform peer-checked:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
