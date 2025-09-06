@@ -4,7 +4,6 @@ import Services from "@/modules/Services";
 import About from "@/modules/About";
 import Team from "@/modules/Team";
 import TeamCarousel from "@/modules/TeamCarousel";
-import ConsultForm from "@/modules/ConsultForm";
 
 export default function Home() {
   return (
@@ -26,9 +25,6 @@ export default function Home() {
       </section>
       <section id="team">
         <TeamCarousel />
-      </section>
-      <section id="contact">
-        <ConsultForm />
       </section>
     </>
   );
