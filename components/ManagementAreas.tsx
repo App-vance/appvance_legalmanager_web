@@ -1,3 +1,4 @@
+import TitleMobile from "./TitleMobile"
 interface Gestion {
   id: string,
   title: string,
@@ -25,8 +26,7 @@ const ManagementAreas = ({ image, title, description, gestion }: ManagementAreas
         </section>
 
         <section className='min-h-fit px-8 py-10 lg:pb-36 lg:pr-36 lg:pl-24 lg:pt-24'>
-            <h2 className='text-subtitle text-primary-blue mb-6'>Áreas de gestión:</h2>
-            <div className='w-24 h-1 bg-secondary-blue mb-8 lg:mb-16'></div>
+            <TitleMobile title="Áreas de gestión:" />
             <div className='w-full'>
                 <div className="w-full mx-auto space-y-4 font-quicksand">
                     {
