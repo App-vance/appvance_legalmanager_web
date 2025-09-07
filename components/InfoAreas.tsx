@@ -31,7 +31,7 @@ const InfoAreas = ({ areaInfo }: { areaInfo: AreaInfo }) => {
   const { id, title, description, themes, subthemes, performance } = areaInfo;
   return (
     <>
-      <div className="bg-blue-light px-8 py-10">
+      <div className="bg-blue-light px-8 py-10 lg:p-24">
         <div className={title ? "mb-6" : ""}>
           { title && <SectionIntro title={title} classTitle="text-subtitle text-primary-blue font-inter" description={description} descriptionClass="text-body text-primary-blue font-quicksand" /> }
         </div>
@@ -41,7 +41,7 @@ const InfoAreas = ({ areaInfo }: { areaInfo: AreaInfo }) => {
               <div key={index} className="mb-6">
                 <SectionIntro title={theme.title} classTitle="text-subtitle text-primary-blue font-inter" description={theme.description} descriptionClass="text-body text-primary-blue font-quicksand" />
 
-                <ul className="flex flex-col gap-6 text-gray">
+                <ul className="flex flex-col gap-6 text-gray mt-6">
                   {theme.items.map((item, i) => (
                     <li key={i} className="flex items-center gap-4">
                       <span>
@@ -51,11 +51,6 @@ const InfoAreas = ({ areaInfo }: { areaInfo: AreaInfo }) => {
                     </li>
                   ))}
                 </ul>
-                {/* <ul className="list-disc list-inside ml-4 text-gray-700">
-                  {theme.items.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul> */}
               </div>
             ))}
           </div>

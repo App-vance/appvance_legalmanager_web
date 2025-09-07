@@ -27,7 +27,7 @@ const ManagementAreas = ({ image, title, description, gestion }: ManagementAreas
 
         <section className='min-h-fit px-8 py-10 lg:pb-36 lg:pr-36 lg:pl-24 lg:pt-24'>
             <SectionIntro title="Áreas de gestión:" classTitle="text-subtitle text-primary-blue font-inter" />
-            <div className='w-full'>
+            <div className='w-full mt-8 lg:mt-16'>
                 <div className="w-full mx-auto space-y-4 font-quicksand">
                     {
                         gestion?.map((el, index) => (

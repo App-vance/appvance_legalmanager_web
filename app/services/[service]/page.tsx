@@ -2,6 +2,7 @@ import React from 'react'
 import { getServiceInfo, getAreasInfo } from '@/helpers/services';
 import ManagementAreas from '@/components/ManagementAreas';
 import InfoAreas from '@/components/InfoAreas';
+import ClientTestimonials from '@/components/ClientTestimonials';
 
 interface PageProps {
     params: {
@@ -23,6 +24,7 @@ const page = ({ params }: PageProps) => {
                 gestion={serviceData.gestion}
             />
             <InfoAreas areaInfo={areaInfo} />
+            <ClientTestimonials />
         </>
     )
 }
