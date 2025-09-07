@@ -1,6 +1,7 @@
 import React from 'react'
-import { getServiceInfo } from '@/helpers/services';
+import { getServiceInfo, getAreasInfo } from '@/helpers/services';
 import ManagementAreas from '@/components/ManagementAreas';
+import InfoAreas from '@/components/InfoAreas';
 
 interface PageProps {
     params: {
@@ -11,6 +12,7 @@ interface PageProps {
 const page = ({ params }: PageProps) => {
     const service = params.service;
     const serviceData = getServiceInfo[service];
+    const areaInfo = getAreasInfo[service];
 
     return (
         <>
@@ -20,6 +22,7 @@ const page = ({ params }: PageProps) => {
                 description={serviceData.description}
                 gestion={serviceData.gestion}
             />
+            <InfoAreas areaInfo={areaInfo} />
         </>
     )
 }
