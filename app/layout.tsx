@@ -3,6 +3,7 @@ import { Quicksand, Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/modules/Footer";
 import Header from "@/modules/Header";
+import ConsultForm from "@/modules/ConsultForm";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -35,6 +36,9 @@ export default function RootLayout({
           <Header />
         </section>
         {children}
+        <section id="contact">
+          <ConsultForm />
+        </section>
         <section id="ubication">
           <Footer />
         </section>
