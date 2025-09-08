@@ -4,6 +4,7 @@ import React from "react";
 import Button from "@/components/Button";
 import { useFormValidation } from "@/hooks/useFormValidation";
 import { sendEmail, TemplateParams } from "@/services/email-service";
+import SectionIntro from "@/components/SectionIntro";
 
 const ConsultForm = () => {
   const { values, errors, handleChange, validate } = useFormValidation(
@@ -70,11 +71,14 @@ const ConsultForm = () => {
   };
 
   return (
-    <div className="bg-blue-light font-quicksand">
+    <div className="font-quicksand">
       <form
         onSubmit={handleSubmit}
         className="px-8 md:px-20 lg:px-56 py-14 lg:py-28 text-body flex gap-6 lg:gap-10 flex-col"
       >
+        <div className="flex lg:hidden">
+          <SectionIntro title="Conversemos sobre tu necesidad" titleClass="text-subtitle text-primary-blue font-inter" description="Déjanos tus datos y un mensaje." descriptionClass="text-body text-primary-blue font-quicksand" />
+        </div>
         {/* Nombre y Correo */}
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-9">
           <div className="flex-1">
