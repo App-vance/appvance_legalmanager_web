@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <>
       <footer className="font-quicksand">
-        <div className="flex flex-col px-8 md:px-20 lg:px-56 py-10 bg-primary-blue text-white lg:flex-row lg:py-20">
+        <div className="flex flex-col px-8 md:px-20 lg:px-56 py-10 bg-primary-blue text-white xl:flex-row lg:py-20">
           <div className="flex-1 flex flex-col gap-5 mb-8 lg:mb-0">
             <div className='hidden lg:block lg:w-52 lg:h-9 lg:relative lg:mb-10'>
               <Link href="/">
@@ -40,7 +40,7 @@ const Footer = () => {
             </div>
             <p className="hidden lg:block lg:!text-small">&copy; {year} Consultorías Empresariales. Todos los derechos reservados. Diseño y desarrollo por Appvance.</p>
           </div>
-          <div className="flex-1 w-full">
+          <div className="flex-1 w-full lg:mt-10">
             <div className="w-full h-[21.25rem] lg:h-96 lg:w-[37.125rem] lg:ml-auto">
               <iframe
                 width="100%"

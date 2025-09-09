@@ -17,7 +17,7 @@ const Hero = () => {
         </h3>
         <Button
           text="Contáctate aquí"
-          customClass="text-button bg-secondary-blue"
+          customClass="text-button !bg-gray hover:!bg-secondary-blue transition-colors"
           icon={<PhoneIcon className="h-6 w-6" />}
           onClick={() => console.log("Solicitar asesoría clicked")}
         />
