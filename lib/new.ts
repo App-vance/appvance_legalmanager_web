@@ -2,7 +2,7 @@
 import { cf } from "./contentful";
 
 // Lista de noticias
-const NEWS_LIST = /* GraphQL */ `
+const NEWS_LIST = `
   query NewsList($limit: Int = 20) {
     newsCollection(order: date_DESC, limit: $limit) {
       items {
@@ -14,7 +14,6 @@ const NEWS_LIST = /* GraphQL */ `
           url
           width
           height
-          description
           title
         }
       }
@@ -23,12 +22,12 @@ const NEWS_LIST = /* GraphQL */ `
 `;
 
 export async function getNewsList(limit = 20) {
-    const data = await cf<{ newsCollection: { items: any[] } }>(NEWS_LIST, { limit }, { tags: ["news"] });
-    return data?.newsCollection?.items ?? [];
+  const data = await cf<{ newsCollection: { items: any[] } }>(NEWS_LIST, { limit }, { tags: ["news"] });
+  return data?.newsCollection?.items ?? [];
 }
 
-// Una noticia por ID (como aún no tienes slug)
-const NEWS_BY_ID = /* GraphQL */ `
+// Una noticia por ID
+const NEWS_BY_ID = `
   query NewsById($id: String!) {
     news(id: $id) {
       sys { id }
@@ -38,8 +37,7 @@ const NEWS_BY_ID = /* GraphQL */ `
       img {
         url
         width
-        height
-        description
+        height      
         title
       }
     }
@@ -47,8 +45,8 @@ const NEWS_BY_ID = /* GraphQL */ `
 `;
 
 export async function getNewsById(id: string) {
-    const data = await cf<{ news: any }>(NEWS_BY_ID, { id }, { tags: ["news"] });
-    return data.news ?? null;
+  const data = await cf<{ news: any }>(NEWS_BY_ID, { id }, { tags: ["news"] });
+  return data.news ?? null;
 }
 
 // Para SSG: todos los IDs publicados
@@ -63,6 +61,6 @@ const NEWS_IDS = /* GraphQL */ `
 `;
 
 export async function getAllNewsIds() {
-    const data = await cf<{ newsCollection: { items: { sys: { id: string } }[] } }>(NEWS_IDS, {}, { tags: ["news"] });
-    return data.newsCollection.items.map((i) => i.sys.id);
+  const data = await cf<{ newsCollection: { items: { sys: { id: string } }[] } }>(NEWS_IDS, {}, { tags: ["news"] });
+  return data.newsCollection.items.map((i) => i.sys.id);
 }
