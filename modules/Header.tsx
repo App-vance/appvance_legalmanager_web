@@ -8,6 +8,7 @@ import Image from 'next/image'
 import { navigationLinks } from '@/helpers/nav'
 import Drawer from '@/components/Drawer'
 import Link from 'next/link'
+import { scrollToSection } from '@/helpers/nav'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -16,21 +17,19 @@ const Header = () => {
     setIsOpen(!isOpen);
   }
 
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <>
       <header className='flex justify-between px-8 py-10 md:px-20 lg:px-56 items-center bg-[#001970] text-white text-body lg:py-11'>
         <div className='w-44 h-9 lg:w-52 relative'>
-          <Image
-            src="/logoWhite.svg"
-            alt="Appvance Legal Manager Logo"
-            fill
-            priority
-            className='object-contain'
-          />
+          <Link href="/">
+            <Image
+              src="/logoWhite.svg"
+              alt="Appvance Legal Manager Logo"
+              fill
+              priority
+              className='object-contain'
+            />
+          </Link>
         </div>
         <div className='lg:hidden z-100'>
           {
@@ -45,9 +44,7 @@ const Header = () => {
           <ul className='flex gap-9'>
             {navigationLinks.map((link) => (
               <li key={link.name} className='text-body font-quicksand'>
-                <Link href={link.href}>
-                  <button className='cursor-pointer hover:text-secondary-blue transition-colors duration-200'>{link.name}</button>
-                </Link>
+                <button onClick={() => scrollToSection(link.id)} className='cursor-pointer hover:text-secondary-blue transition-colors duration-200'>{link.name}</button>
               </li>
             ))}
           </ul>

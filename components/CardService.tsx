@@ -2,6 +2,7 @@ import React from 'react'
 
 import Button from "@/components/Button";
 import { CheckIcon } from '@heroicons/react/20/solid';
+import Link from 'next/link';
 
 type CardServiceProps = {
   title: string;
@@ -9,9 +10,10 @@ type CardServiceProps = {
   customClass?: string;
   items: string[];
   icon?: React.ReactNode;
+  id: string;
 }
 
-const CardService = ({ title, description, customClass, items, icon }: CardServiceProps) => {
+const CardService = ({ title, description, customClass, items, icon, id }: CardServiceProps) => {
   return (
     <>
       <div className="ring ring-primary-blue rounded-lg py-8 lg:max-h-[500px] lg:min-w-[500px] lg:p-8 lg:flex lg:flex-col lg:justify-between lg:items-start">
@@ -38,10 +40,17 @@ const CardService = ({ title, description, customClass, items, icon }: CardServi
           </ul>
         </div>
 
-        <Button
-          text="Conoce más aquí"
-          customClass="justify-center w-64 mx-auto md:mx-12 text-button ring ring-secondary-blue bg-white !text-secondary-blue transition-colors hover:bg-secondary-blue hover:!text-white active:bg-white active:!text-secondary-blue lg:mx-0"
-        />
+        {
+          id !== "especificos" && (
+            <Link href={`servicios/${id}`}>
+              <Button
+                text="Conoce más aquí"
+                customClass="justify-center w-64 mx-auto md:mx-12 text-button ring ring-secondary-blue bg-white !text-secondary-blue transition-colors hover:bg-secondary-blue hover:!text-white active:bg-white active:!text-secondary-blue lg:mx-0"
+              />
+            </Link>
+          )
+        }
+
       </div>
     </>
   );

@@ -1,5 +1,8 @@
+'use client';
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import Image from 'next/image';
+import Link from "next/link";
+import { navigationLinks, scrollToSection } from "@/helpers/nav";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -10,19 +13,21 @@ const Footer = () => {
         <div className="flex flex-col px-8 md:px-20 lg:px-56 py-10 bg-primary-blue text-white lg:flex-row lg:py-20">
           <div className="flex-1 flex flex-col gap-5 mb-8 lg:mb-0">
             <div className='hidden lg:block lg:w-52 lg:h-9 lg:relative lg:mb-10'>
-              <Image
-                src="/logoWhite.svg"
-                alt="Appvance Legal Manager Logo"
-                fill
-                priority
-                className='object-contain'
-              />
+              <Link href="/">
+                <Image
+                  src="/logoWhite.svg"
+                  alt="Appvance Legal Manager Logo"
+                  fill
+                  priority
+                  className='object-contain'
+                />
+              </Link>
             </div>
-            <p className="text-body lg:text-xl">Servicios</p>
-            <p className="text-body lg:text-xl">Quiénes somos</p>
-            <p className="text-body lg:text-xl">Equipo</p>
-            <p className="text-body lg:text-xl">Contáctanos</p>
-            <p className="text-body lg:text-xl">Ubicación</p>
+            {
+              navigationLinks.map((link) => (
+                <button key={link.name} onClick={() => scrollToSection(link.id)} className='text-body lg:text-xl text-left cursor-pointer hover:text-secondary-blue transition-colors duration-200'>{link.name}</button>
+              ))
+            }
             <div className="flex flex-col gap-5 lg:flex-row lg:pt-10 lg:gap-10 lg:mb-6">
               <p className="inline-flex items-center gap-4">
                 <PhoneIcon className="h-4 w-4" />

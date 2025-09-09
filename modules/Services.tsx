@@ -13,6 +13,7 @@ export default function Services() {
         </div>
         <div className="flex flex-col gap-8 px-8 py-10 md:px-36 lg:grid lg:grid-cols-2 lg:px-1 lg:gap-16 custom-scrollbar">
           <CardService
+            id="admin"
             title="Área Administrativa"
             description="Los enfoques están dados por nuestras diferentes áreas de gestión tales como:"
             customClass="lg:grid-cols-2"
@@ -39,6 +40,7 @@ export default function Services() {
               "Derecho civil",
               "Seguridad social"
             ]}
+            id="juridica"
           />
           <CardService
             title="Área Contable"
@@ -51,6 +53,7 @@ export default function Services() {
               "Derecho civil",
               "Seguridad social"
             ]}
+            id="contable"
           />
           <CardService
             title="Servicios Específicos"
@@ -63,6 +66,7 @@ export default function Services() {
               "Procesos de responsabilidad estatal ",
               "Derecho de seguros"
             ]}
+            id="especificos"
           />
         </div>
       </section>

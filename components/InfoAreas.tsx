@@ -29,16 +29,17 @@ interface Performance {
 
 const InfoAreas = ({ areaInfo }: { areaInfo: AreaInfo }) => {
   const { id, title, description, themes, subthemes, performance } = areaInfo;
+
   return (
     <>
       <div className="bg-blue-light px-8 py-10 lg:p-24">
         <div className={title ? "mb-6" : ""}>
-          { title && <SectionIntro title={title} titleClass="text-subtitle text-primary-blue font-inter" description={description} descriptionClass="text-body text-primary-blue font-quicksand" /> }
+          {title && <SectionIntro title={title} titleClass="text-subtitle text-primary-blue font-inter" description={description} descriptionClass="text-body text-primary-blue font-quicksand" />}
         </div>
         {themes.length > 0 && (
-          <div className="flex flex-col gap-8 font-quicksand mb-10">
+          <div className="flex gap-8 font-quicksand mb-10 lg:flex-wrap lg:justify-between">
             {themes.map((theme, index) => (
-              <div key={index} className="mb-6">
+              <div key={index} className="mb-6 lg:w-[45%]">
                 <SectionIntro title={theme.title} titleClass="text-subtitle text-primary-blue font-inter" description={theme.description} descriptionClass="text-body text-primary-blue font-quicksand" />
 
                 <ul className="flex flex-col gap-6 text-gray mt-6">
@@ -56,9 +57,9 @@ const InfoAreas = ({ areaInfo }: { areaInfo: AreaInfo }) => {
           </div>
         )}
         {subthemes.length > 0 && (
-          <div className="flex flex-col gap-8 font-quicksand mb-10">
+          <div className="flex flex-col lg:flex-wrap lg:flex-row lg:justify-between gap-8 font-quicksand mb-10">
             {subthemes.map((subtheme, index) => (
-              <div key={index} className="mb-4">
+              <div key={index} className="mb-4 lg:w-[45%]">
                 <h3 className="text-features font-semibold text-secondary-blue mb-6">
                   {subtheme.title}
                 </h3>
@@ -77,7 +78,7 @@ const InfoAreas = ({ areaInfo }: { areaInfo: AreaInfo }) => {
             ))}
           </div>
         )}
-        { performance && <SectionIntro title={performance.title} titleClass="text-subtitle text-primary-blue font-inter" description={performance.description} descriptionClass="text-body text-primary-blue font-quicksand" /> }
+        {performance && <SectionIntro title={performance.title} titleClass="text-subtitle text-primary-blue font-inter" description={performance.description} descriptionClass="text-body text-primary-blue font-quicksand" />}
       </div>
     </>
   );

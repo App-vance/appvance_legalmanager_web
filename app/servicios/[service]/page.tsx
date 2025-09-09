@@ -5,13 +5,11 @@ import InfoAreas from '@/components/InfoAreas';
 import ClientTestimonials from '@/components/ClientTestimonials';
 
 interface PageProps {
-    params: {
-        service: string
-    }; // Replace 'any' with a more specific type if possible
+    params: Promise<{ service: string }>;
 }
 
-const page = ({ params }: PageProps) => {
-    const service = params.service;
+const page = async ({ params }: PageProps) => {
+    const { service } = await params;
     const serviceData = getServiceInfo[service];
     const areaInfo = getAreasInfo[service];
 
