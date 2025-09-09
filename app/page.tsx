@@ -4,8 +4,13 @@ import Services from "@/modules/Services";
 import About from "@/modules/About";
 import Team from "@/modules/Team";
 import TeamCarousel from "@/modules/TeamCarousel";
+import { getNewsList } from "@/lib/new";
 
-export default function Home() {
+export default async function Home() {
+  const items = await getNewsList(20);
+  console.log(items);
+
+
   return (
     <>
       <section>
@@ -29,3 +34,4 @@ export default function Home() {
     </>
   );
 }
+
