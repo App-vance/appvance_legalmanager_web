@@ -260,7 +260,7 @@ const ConsultForm = () => {
           )}
         </div>
 
-        <Button text="Enviar mi consulta" customClass="w-fit" />
+        <Button text="Enviar mi consulta" customClass="w-fit !bg-gray hover:!bg-secondary-blue transition-colors" />
       </form>
     </div>
   );
