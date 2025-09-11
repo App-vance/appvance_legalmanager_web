@@ -5,6 +5,7 @@ import About from "@/modules/About";
 import Team from "@/modules/Team";
 import TeamCarousel from "@/modules/TeamCarousel";
 import Notices from "@/modules/Notices";
+import SocialMedia from "@/components/SocialMedia";
 import { getNewsList } from "@/lib/new";
 
 export default async function Home() {
@@ -34,6 +35,7 @@ export default async function Home() {
       <section id="notices">
         <Notices notices={items} />
       </section>
+      <SocialMedia />
     </>
   );
 }
