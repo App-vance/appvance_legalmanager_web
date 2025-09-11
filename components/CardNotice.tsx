@@ -42,7 +42,7 @@ const CardNotice = ({ order, date, description, img, sys, tittle }:Notice) => {
             src={img?.url}
             alt={tittle}
             fill
-            className="object-cover rounded-lg"
+            className="object-cover lg:rounded-lg"
           />
         </div>
         <div className='p-8 last:lg:pb-0 lg:p-0'>
