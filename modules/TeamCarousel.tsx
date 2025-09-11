@@ -18,16 +18,15 @@ const TeamCarousel = () => {
 
   return (
     <div className='lg:hidden'>
-      <div className='py-10 px-8'>
+      <div className='py-10 px-8 md:px-36'>
         <div className="w-full flex flex-col items-center justify-between bg-white rounded-2xl">
           {/* Contenido */}
           <div className="relative w-full h-[42.625rem]">
             {team.map((item, i) => (
               <div
                 key={i}
-                className={`absolute inset-0 transition-opacity duration-500 h-full ${
-                  i === index ? "opacity-100 relative" : "opacity-0 pointer-events-none"
-                }`}
+                className={`absolute inset-0 transition-opacity duration-500 h-full ${i === index ? "opacity-100 relative" : "opacity-0 pointer-events-none"
+                  }`}
               >
                 <CardCarousel
                   name={item.name}
@@ -50,9 +49,8 @@ const TeamCarousel = () => {
               {team.map((_, i) => (
                 <span
                   key={i}
-                  className={`rounded-full transition ${
-                    i === index ? "bg-blue-600 w-2 h-2" : "bg-gray-300 h-1 w-1"
-                  }`}
+                  className={`rounded-full transition ${i === index ? "bg-blue-600 w-2 h-2" : "bg-gray-300 h-1 w-1"
+                    }`}
                 />
               ))}
             </div>

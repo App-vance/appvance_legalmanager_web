@@ -8,7 +8,7 @@ type SimpleCardProps = {
 
 const SimpleCardTeam = ({ name, position, image }: SimpleCardProps) => {
     return (
-        <div className='flex flex-col items-center justify-center bg-blue-light'>
+        <div className='flex flex-col items-center justify-center bg-blue-light font-quicksand'>
             <Image
                 src={image}
                 alt={name}
@@ -17,7 +17,7 @@ const SimpleCardTeam = ({ name, position, image }: SimpleCardProps) => {
                 className='object-contain'
             />
             <p className='text-black text-button py-3'>{name}</p>
-            <span className='text-white text-body-secondary bg-secondary-blue w-full text-center rounded-lg py-2'>{position}</span>
+            <span className='text-white text-body-secondary bg-secondary-blue w-full text-center rounded-b-lg py-2'>{position}</span>
         </div>
     )
 }

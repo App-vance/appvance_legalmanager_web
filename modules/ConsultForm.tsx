@@ -4,6 +4,7 @@ import React from "react";
 import Button from "@/components/Button";
 import { useFormValidation } from "@/hooks/useFormValidation";
 import { sendEmail, TemplateParams } from "@/services/email-service";
+import SectionIntro from "@/components/SectionIntro";
 
 const ConsultForm = () => {
   const { values, errors, handleChange, validate } = useFormValidation(
@@ -44,7 +45,7 @@ const ConsultForm = () => {
     if (!isValid) return;
 
     const formData = new FormData(e.currentTarget);
-    
+
     let messageContent = "";
 
     messageContent += `<p><strong>Nombre:</strong> ${formData.get("name")}</p>`;
@@ -55,34 +56,36 @@ const ConsultForm = () => {
     messageContent += `<p><strong>Prioridad:</strong> ${formData.get("priority")}</p>`;
 
     const templateParams: TemplateParams = {
-        message: messageContent, // 🔑 ahora solo un campo
+      message: messageContent, // 🔑 ahora solo un campo
     };
 
     try {
-        await sendEmail('service_0b2yiq1', 'template_74uavx6', templateParams);
-        // setStatus("success");
+      await sendEmail('service_0b2yiq1', 'template_74uavx6', templateParams);
+      // setStatus("success");
     } catch (error) {
-        console.error(error);
-        // setStatus("error");
+      console.error(error);
+      // setStatus("error");
     } finally {
-        // setLoading(false);
+      // setLoading(false);
     }
   };
 
   return (
-    <div className="bg-blue-light">
+    <div className="font-quicksand">
       <form
         onSubmit={handleSubmit}
-        className="px-8 lg:px-56 py-14 lg:py-28 text-body flex gap-6 lg:gap-10 flex-col"
+        className="px-8 md:px-20 lg:px-56 py-14 lg:py-28 text-body flex gap-6 lg:gap-10 flex-col"
       >
+        <div className="flex lg:hidden">
+          <SectionIntro title="Conversemos sobre tu necesidad" titleClass="text-subtitle text-primary-blue font-inter" description="Déjanos tus datos y un mensaje." descriptionClass="text-body text-primary-blue font-quicksand" />
+        </div>
         {/* Nombre y Correo */}
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-9">
           <div className="flex-1">
             <label htmlFor="name">Nombre completo*</label>
             <input
-              className={`border rounded-md px-4 py-2.5 w-full text-gray outline-secondary-blue/30 mt-3 ${
-                errors.name ? "border-red-500" : "border-gray-300"
-              }`}
+              className={`border rounded-md px-4 py-2.5 w-full text-gray outline-secondary-blue/30 mt-3 ${errors.name ? "border-red-500" : "border-gray-300"
+                }`}
               type="text"
               id="name"
               name="name"
@@ -97,9 +100,8 @@ const ConsultForm = () => {
           <div className="flex-1">
             <label htmlFor="email">Correo electrónico*</label>
             <input
-              className={`border rounded-md px-4 py-2.5 w-full text-gray outline-secondary-blue/30 mt-3 ${
-                errors.email ? "border-red-500" : "border-gray-300"
-              }`}
+              className={`border rounded-md px-4 py-2.5 w-full text-gray outline-secondary-blue/30 mt-3 ${errors.email ? "border-red-500" : "border-gray-300"
+                }`}
               type="email"
               id="email"
               name="email"
@@ -118,9 +120,8 @@ const ConsultForm = () => {
           <div className="flex-1">
             <label htmlFor="phone">Tu número de contacto*</label>
             <input
-              className={`border rounded-md px-4 py-2.5 w-full text-gray outline-secondary-blue/30 mt-3 ${
-                errors.phone ? "border-red-500" : "border-gray-300"
-              }`}
+              className={`border rounded-md px-4 py-2.5 w-full text-gray outline-secondary-blue/30 mt-3 ${errors.phone ? "border-red-500" : "border-gray-300"
+                }`}
               type="text"
               id="phone"
               name="phone"
@@ -140,9 +141,8 @@ const ConsultForm = () => {
           <div className="flex-1 relative">
             <label htmlFor="interest">Área de interés*</label>
             <select
-              className={`appearance-none border mt-3 rounded-md px-4 py-2.5 w-full text-gray outline-none focus:ring-1 focus:ring-secondary-blue/30 focus:border-secondary-blue/30 transition ${
-                errors.interest ? "border-red-500" : "border-gray-300"
-              }`}
+              className={`appearance-none border mt-3 rounded-md px-4 py-2.5 w-full text-gray outline-none focus:ring-1 focus:ring-secondary-blue/30 focus:border-secondary-blue/30 transition ${errors.interest ? "border-red-500" : "border-gray-300"
+                }`}
               id="interest"
               name="interest"
               value={values.interest}
@@ -193,18 +193,17 @@ const ConsultForm = () => {
           <label htmlFor="message">Campo de descripción de tu caso*</label>
           <textarea
             rows={6}
-            className={`border rounded-md px-4 py-2.5 w-full text-gray outline-secondary-blue/30 text-area mt-3 ${
-              errors.message ? "border-red-500" : "border-gray-300"
-            }`}
+            className={`border rounded-md px-4 py-2.5 w-full text-gray outline-secondary-blue/30 text-area mt-3 ${errors.message ? "border-red-500" : "border-gray-300"
+              }`}
             id="message"
             name="message"
             placeholder="Cuéntanos los detalles de tu caso: situación actual, tipo de asesoría que necesitas, la urgencia y cualquier información importante."
             value={values.message}
             onChange={(e) => {
-                handleChange({
-                  target: { name: "message", value: e.target.value },
-                } as React.ChangeEvent<HTMLInputElement>);
-              }}
+              handleChange({
+                target: { name: "message", value: e.target.value },
+              } as React.ChangeEvent<HTMLInputElement>);
+            }}
           />
           {errors.message && (
             <p className="text-red-500 text-sm mt-1">{errors.message}</p>
@@ -231,10 +230,10 @@ const ConsultForm = () => {
                 {val === "alta"
                   ? "Lo antes posible"
                   : val === "media"
-                  ? "Esta semana"
-                  : val === "baja"
-                  ? "Este mes"
-                  : "Cuando sea conveniente"}
+                    ? "Esta semana"
+                    : val === "baja"
+                      ? "Este mes"
+                      : "Cuando sea conveniente"}
               </label>
             ))}
           </div>
@@ -261,7 +260,7 @@ const ConsultForm = () => {
           )}
         </div>
 
-        <Button text="Enviar mi consulta" customClass="w-fit" />
+        <Button text="Enviar mi consulta" customClass="w-fit !bg-gray hover:!bg-secondary-blue transition-colors" />
       </form>
     </div>
   );
