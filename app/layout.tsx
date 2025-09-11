@@ -4,6 +4,8 @@ import "./globals.css";
 import Footer from "@/modules/Footer";
 import Header from "@/modules/Header";
 import ConsultForm from "@/modules/ConsultForm";
+import ScrollUp from "@/components/ScrollUp";
+import SocialMedia from "@/components/SocialMedia";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -42,6 +44,8 @@ export default function RootLayout({
         <section id="ubication">
           <Footer />
         </section>
+        <ScrollUp />
+        <SocialMedia />
       </body>
     </html>
   );

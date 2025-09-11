@@ -43,8 +43,21 @@ const Header = () => {
         <nav className='hidden lg:block'>
           <ul className='flex gap-9'>
             {navigationLinks.map((link) => (
-              <li key={link.name} className='text-body font-quicksand'>
-                <button onClick={() => scrollToSection(link.id)} className='cursor-pointer hover:text-secondary-blue transition-colors duration-200'>{link.name}</button>
+              <li
+                key={link.name}
+                className="
+                  relative inline-block text-body font-quicksand
+                  before:content-[''] before:absolute before:inset-0 before:cursor-pointer before:bg-secondary-blue before:rounded-lg
+                  before:opacity-0 hover:before:opacity-100
+                  before:transition-opacity before:duration-300
+                "
+              >
+                <button
+                  onClick={() => scrollToSection(link.id)}
+                  className="relative z-10 px-1 cursor-pointer"
+                >
+                  {link.name}
+                </button>
               </li>
             ))}
           </ul>

@@ -25,7 +25,7 @@ const Footer = () => {
             </div>
             {
               navigationLinks.map((link) => (
-                <button key={link.name} onClick={() => scrollToSection(link.id)} className='text-body lg:text-xl text-left cursor-pointer hover:text-secondary-blue transition-colors duration-200'>{link.name}</button>
+                <button key={link.name} onClick={() => scrollToSection(link.id)} className='text-body lg:text-xl text-left cursor-pointer transition-colors duration-200 lg:w-fit hover:lg:bg-secondary-blue lg:rounded-lg'>{link.name}</button>
               ))
             }
             <div className="flex flex-col gap-5 lg:flex-row lg:pt-10 lg:gap-10 lg:mb-6">
