@@ -14,6 +14,7 @@ interface Image {
 }
 
 interface Notice {
+  order: number;
   sys: Sys;
   tittle: string;
   date: string;
@@ -32,26 +33,28 @@ const setDateNotice = (dateString: string) => {
 
   return `${day} ${capitalizedMonth}, ${year}`;
 };
-const CardNotice = ({ date, description, img, sys, tittle }:Notice) => {
+const CardNotice = ({ order, date, description, img, sys, tittle }:Notice) => {
   return (
     <>
-      <div className='relative w-full h-64'>
-        <Image
-          src={img?.url}
-          alt={tittle}
-          fill
-          className="object-cover"
-        />
-      </div>
-      <div className='p-8 last:pb-0'>
-        <div className='flex flex-col gap-4 justify-center items-center font-quicksand pb-10 border-b border-gray'>
-          <span className='text-small text-primary-blue'>{setDateNotice(date)}</span>
-          <h1 className='text-features text-secondary-blue'>{tittle}</h1>
-          <p className='text-center text-small'>{description}</p>
-          <Button
-            text="Más información aquí"
-            customClass="justify-center w-fit mx-auto md:mx-12 text-button ring ring-secondary-blue bg-white !text-secondary-blue transition-colors hover:bg-secondary-blue hover:!text-white active:bg-white active:!text-secondary-blue lg:mx-0"
+      <div className={`lg:flex lg:gap-5 ${order === 0 ? 'lg:hidden' : ''}`}>
+        <div className='relative shrink-0 w-full h-64 lg:w-40 lg:h-40 xl:w-48 xl:h-48'>
+          <Image
+            src={img?.url}
+            alt={tittle}
+            fill
+            className="object-cover rounded-lg"
           />
+        </div>
+        <div className='p-8 last:lg:pb-0 lg:p-0'>
+          <div className='flex flex-col gap-4 justify-center items-center font-quicksand pb-10 border-b border-gray lg:border-none lg:items-start lg:pb-0 lg:gap-3 xl:gap-4'>
+            <span className='text-small text-primary-blue lg:text-white'>{setDateNotice(date)}</span>
+            <h1 className='text-features text-secondary-blue lg:text-white'>{tittle}</h1>
+            <p className='text-center text-small lg:text-white lg:text-start lg:line-clamp-3'>{description}</p>
+            <Button
+              text="Más información aquí"
+              customClass="justify-center w-fit mx-auto md:mx-12 text-button ring ring-secondary-blue bg-white !text-secondary-blue lg:ring-0 lg:!bg-gray lg:!text-white transition-colors hover:!bg-secondary-blue hover:lg:!text-white active:bg-secondary-blue active:lg:!bg-gray active:!text-white lg:mx-0"
+            />
+          </div>
         </div>
       </div>
     </>
