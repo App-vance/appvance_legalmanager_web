@@ -74,7 +74,7 @@ const ConsultForm = () => {
     <div className="font-quicksand">
       <form
         onSubmit={handleSubmit}
-        className="px-8 md:px-20 lg:px-56 py-14 lg:py-28 text-body flex gap-6 lg:gap-10 flex-col"
+        className="px-8 md:px-20 xl:px-56 py-14 lg:py-20 xl:py-28 text-body flex gap-6 lg:gap-10 flex-col"
       >
         <div className="flex lg:hidden">
           <SectionIntro title="Conversemos sobre tu necesidad" titleClass="text-subtitle text-primary-blue font-inter" description="Déjanos tus datos y un mensaje." descriptionClass="text-body text-primary-blue font-quicksand" />

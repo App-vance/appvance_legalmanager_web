@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <>
-      <header className='flex justify-between px-8 py-10 md:px-20 lg:px-56 items-center bg-[#001970] text-white text-body lg:py-11'>
+      <header className='flex justify-between px-8 py-10 md:px-20 xl:px-56 items-center bg-[#001970] text-white text-body lg:py-11'>
         <div className='w-44 h-9 lg:w-52 relative'>
           <Link href="/">
             <Image
@@ -41,7 +41,7 @@ const Header = () => {
           }
         </div>
         <nav className='hidden lg:block'>
-          <ul className='flex gap-9'>
+          <ul className='flex lg:gap-6 xl:gap-9'>
             {navigationLinks.map((link) => (
               <li
                 key={link.name}

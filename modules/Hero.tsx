@@ -7,7 +7,7 @@ import ContactForm from "@/modules/ContactForm";
 
 const Hero = () => {
   return (
-    <div className="hero-bg px-8 md:px-20 lg:px-56 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-20 py-24 text-white">
+    <div className="hero-bg px-8 md:px-20 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-20 py-24 text-white xl:px-56">
       <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
         <h1 className="font-inter text-title lg:max-w-[650px]">
           Tu aliado legal en cada etapa de tu negocio y vida
@@ -22,7 +22,7 @@ const Hero = () => {
           onClick={() => console.log("Solicitar asesoría clicked")}
         />
       </div>
-      <div className="hidden font-quicksand lg:flex flex-col py-16 px-20 bg-white rounded-lg shadow-lg h-[450px] w-[512px] gap-6">
+      <div className="hidden font-quicksand lg:flex flex-col lg:p-10 xl:py-16 xl:px-20 bg-white rounded-lg shadow-lg h-[450px] w-[512px] gap-6">
         <h3 className="text-primary-blue text-features">
           ¿Necesitas asesoría urgente?
         </h3>

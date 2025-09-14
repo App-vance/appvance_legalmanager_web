@@ -16,7 +16,7 @@ type CardServiceProps = {
 const CardService = ({ title, description, customClass, items, icon, id }: CardServiceProps) => {
   return (
     <>
-      <div className="ring ring-primary-blue rounded-lg py-8 lg:max-h-[500px] lg:min-w-[500px] lg:p-8 lg:flex lg:flex-col lg:justify-between lg:items-start">
+      <div className="ring ring-primary-blue rounded-lg py-8 xl:max-h-[500px] xl:min-w-[500px] lg:p-8 lg:flex lg:flex-col lg:justify-between lg:items-start">
         <div className="text-center lg:text-start">
           {icon}
           <h1 className="font-inter text-features text-primary-blue mb-4 lg:text-subtitle">
