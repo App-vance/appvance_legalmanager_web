@@ -22,7 +22,7 @@ const Hero = () => {
           onClick={() => console.log("Solicitar asesoría clicked")}
         />
       </div>
-      <div className="hidden font-quicksand lg:flex flex-col lg:p-10 xl:py-16 xl:px-20 bg-white rounded-lg shadow-lg h-[450px] w-[512px] gap-6">
+      <div className="hidden font-quicksand lg:flex flex-col lg:p-12 xl:py-16 xl:px-20 bg-white rounded-lg shadow-lg h-[450px] w-[512px] gap-6">
         <h3 className="text-primary-blue text-features">
           ¿Necesitas asesoría urgente?
         </h3>
