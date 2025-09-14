@@ -4,7 +4,7 @@ import SectionIntro from "./SectionIntro";
 const BenefitsSection = () => {
   return (
     <>
-      <div className="p-8 bg-primary-blue lg:p-20 xl:py-24 xl:px-56">
+      <div className="p-8 bg-primary-blue md:px-20 lg:p-20 xl:py-24 xl:px-56">
         <div className="lg:hidden">
           <SectionIntro title="¿Por qué elegirnos?" titleClass="font-inter text-subtitle text-white" />
         </div>

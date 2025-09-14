@@ -32,7 +32,7 @@ const InfoAreas = ({ areaInfo }: { areaInfo: AreaInfo }) => {
 
   return (
     <>
-      <div className="bg-blue-light px-8 py-10 lg:p-20 xl:py-24 xl:px-56">
+      <div className="bg-blue-light px-8 py-10 md:px-20 lg:p-20 xl:py-24 xl:px-56">
         <div className={title ? "mb-6" : ""}>
           {title && <SectionIntro title={title} titleClass="text-subtitle text-primary-blue font-inter" description={description} descriptionClass="text-body text-primary-blue font-quicksand" />}
         </div>

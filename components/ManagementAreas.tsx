@@ -19,13 +19,13 @@ const ManagementAreas = ({ image, title, description, gestion }: ManagementAreas
                 className="w-full h-[21.875rem] bg-cover bg-center"
                 style={{ backgroundImage: `url(${image})` }}
             >
-                <div className='flex flex-col gap-6 items-center justify-center w-full h-full bg-black/70 text-white px-8'>
+                <div className='flex flex-col gap-6 items-center justify-center w-full h-full bg-black/70 text-white px-8 md:px-20'>
                     <h1 className="font-inter text-title max-w-3xs md:max-w-xl text-center">{title}</h1>
                     <p className="font-quicksand max-w-5xl text-center">{description}</p>
                 </div>
             </section>
 
-            <section className='min-h-fit px-8 py-10 lg:p-20 xl:py-24 xl:px-56'>
+            <section className='min-h-fit px-8 py-10 md:px-20 lg:p-20 xl:py-24 xl:px-56'>
                 <SectionIntro title="Áreas de gestión:" titleClass="text-subtitle text-primary-blue font-inter" />
                 <div className='w-full mt-8 lg:mt-16'>
                     <div className="w-full mx-auto space-y-4 font-quicksand">
