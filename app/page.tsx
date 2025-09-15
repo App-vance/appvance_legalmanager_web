@@ -8,7 +8,7 @@ import Notices from "@/modules/Notices";
 import { getNewsList } from "@/lib/new";
 
 export default async function Home() {
-  // const items = await getNewsList(20);
+  const items = await getNewsList(20);
 
 
   return (
@@ -31,9 +31,9 @@ export default async function Home() {
       <section id="team">
         <TeamCarousel />
       </section>
-      {/* <section id="notices">
+      <section id="notices">
         <Notices notices={items} />
-      </section> */}
+      </section>
     </>
   );
 }
