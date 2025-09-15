@@ -1,5 +1,14 @@
+"use client";
+
 import CardTeam from "@/components/CardTeam";
+import Carousel from "@/components/Carousel";
 import SimpleCardTeam from "@/components/SimpleCardTeam";
+import { phases } from "@/helpers/phases";
+
+type Phases = {
+  author: string;
+  text: string;
+};
 
 const Team = () => {
   return (
@@ -17,10 +26,24 @@ const Team = () => {
             "Especialista Responsabilidad Civil y del Estado Universidad Autónoma",
             "Especialista Derecho de Seguros Universidad Javeriana",
             "Conciliador en Derecho",
-            "Docente Universitario."
+            "Docente Universitario.",
           ]}
         />
-        <div className="w-sm bg-gray-100">
+        <div className="w-sm bg-transparent relative">
+          <div className="before:content-['“'] before:absolute before:text-[30rem] before:-top-45 before:left-0 before:text-gray-200 before:-z-10"></div>
+          <Carousel<Phases>
+            items={phases}
+            classname3="w-full flex flex-col items-center justify-between rounded-2xl"
+            height="h-[26.875rem]"
+            renderItem={(item) => (
+              <div className="flex flex-col items-center text-center px-4 py-16 h-full justify-end">
+                <p className="text-body text-slate-600 mb-6">{item.text}</p>
+                <span className="text-small font-bold text-slate-800">
+                  {item.author}
+                </span>
+              </div>
+            )}
+          />
         </div>
       </div>
       <div className="flex w-full gap-10">

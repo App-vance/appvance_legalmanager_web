@@ -16,7 +16,7 @@ const CardCarousel = ({ name, position, image, qualifications }: CardTeamProps) 
             src={image}
             alt={name}
             fill
-            className="object-cover rounded-lg"
+            className="object-cover rounded-lg object-[0%_10%]"
             priority
           />
         </div>
