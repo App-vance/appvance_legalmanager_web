@@ -46,10 +46,10 @@ const CardNotice = ({ order, date, description, img, sys, tittle }:Notice) => {
           />
         </div>
         <div className='p-8 last:lg:pb-0 lg:p-0'>
-          <div className='flex flex-col gap-4 justify-center items-center font-quicksand pb-10 border-b border-gray lg:border-none lg:items-start lg:pb-0 lg:gap-3 xl:gap-4'>
+          <div className='flex flex-col gap-4 justify-center items-center font-quicksand pb-10 border-b border-gray lg:border-none lg:items-start lg:pb-0 lg:gap-2 xl:gap-4'>
             <span className='text-small text-primary-blue lg:text-white'>{setDateNotice(date)}</span>
             <h1 className='text-features text-secondary-blue lg:text-white'>{tittle}</h1>
-            <p className='text-center text-small lg:text-white lg:text-start lg:line-clamp-3'>{description}</p>
+            <p className='text-center text-small lg:text-white lg:text-start lg:line-clamp-2 xl:line-clamp-3'>{description}</p>
             <Button
               text="Más información aquí"
               customClass="justify-center w-fit mx-auto md:mx-12 text-button ring ring-secondary-blue bg-white !text-secondary-blue lg:ring-0 lg:!bg-gray lg:!text-white transition-colors hover:!bg-secondary-blue hover:lg:!text-white active:bg-secondary-blue active:lg:!bg-gray active:!text-white lg:mx-0"

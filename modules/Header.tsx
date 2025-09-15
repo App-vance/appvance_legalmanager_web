@@ -43,7 +43,7 @@ const Header = () => {
           }
         </div>
         <nav className='hidden lg:block'>
-          <ul className='flex gap-9'>
+          <ul className='flex lg:gap-6 xl:gap-9'>
             {navigationLinks.map((link) => (
               <li
                 key={link.name}
