@@ -42,7 +42,7 @@ const CardService = ({ title, description, customClass, items, icon, id }: CardS
 
         {
           id !== "especificos" && (
-            <Link href={`servicios/${id}`}>
+            <Link href={`/servicios/${id}`}>
               <Button
                 text="Conoce más aquí"
                 customClass="justify-center w-64 mx-auto md:mx-12 text-button ring ring-secondary-blue bg-white !text-secondary-blue transition-colors hover:bg-secondary-blue hover:!text-white active:bg-white active:!text-secondary-blue lg:mx-0"

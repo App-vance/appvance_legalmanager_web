@@ -9,9 +9,11 @@ import { navigationLinks } from '@/helpers/nav'
 import Drawer from '@/components/Drawer'
 import Link from 'next/link'
 import { scrollToSection } from '@/helpers/nav'
+import { getServiceInfo } from '@/helpers/services'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [showServices, setShowServices] = useState<boolean>(false);
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -19,7 +21,7 @@ const Header = () => {
 
   return (
     <>
-      <header className='flex justify-between px-8 py-10 md:px-20 lg:px-56 items-center bg-[#001970] text-white text-body lg:py-11'>
+      <header className='flex justify-between px-8 py-10 md:px-20 lg:px-56 items-center bg-[#001970] text-white text-body lg:py-11 relative'>
         <div className='w-44 h-9 lg:w-52 relative'>
           <Link href="/">
             <Image
@@ -51,6 +53,7 @@ const Header = () => {
                   before:opacity-0 hover:before:opacity-100
                   before:transition-opacity before:duration-300
                 "
+                onMouseEnter={() => link.name === "Servicios" && setShowServices(true)}
               >
                 <button
                   onClick={() => scrollToSection(link.id)}
@@ -58,6 +61,25 @@ const Header = () => {
                 >
                   {link.name}
                 </button>
+
+
+                {/* Recuadro con títulos de servicios */}
+                {link.name === "Servicios" && showServices && (
+                  <div className="absolute top-full left-0 mt-3 w-72 bg-white text-black shadow-xl rounded-xl p-5 z-50">
+                    <ul className="flex flex-col gap-3" onMouseLeave={() => setShowServices(false)}>
+                      {Object.values(getServiceInfo).map((service) => (
+                        <li
+                          key={service.title}
+                          className="hover:text-secondary-blue cursor-pointer transition-colors"
+                        >
+                          <Link href={`/servicios/${service.id}`} className="block">
+                          {service.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </li>
             ))}
           </ul>

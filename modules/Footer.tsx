@@ -28,7 +28,7 @@ const Footer = () => {
                 <button key={link.name} onClick={() => scrollToSection(link.id)} className='text-body lg:text-xl text-left cursor-pointer transition-colors duration-200 lg:w-fit hover:lg:bg-secondary-blue lg:rounded-lg'>{link.name}</button>
               ))
             }
-            <div className="flex flex-col gap-5 lg:flex-row lg:pt-10 lg:gap-10 lg:mb-6">
+            <div className="flex flex-col gap-5 lg:pt-4 lg:mb-6">
               <p className="inline-flex items-center gap-4">
                 <PhoneIcon className="h-4 w-4" />
                 <span>+574 322 03 51</span>

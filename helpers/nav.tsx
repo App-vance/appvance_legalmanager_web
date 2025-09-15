@@ -1,7 +1,7 @@
 export const navigationLinks = [
     { name: 'Servicios', href: '/servicios', id: 'services' },
     { name: 'Quiénes somos', href: '/nosotros', id: 'about' },
-    { name: 'Noticias', href: '/noticias', id: 'team' },
+    { name: 'Noticias', href: '/noticias', id: 'notices' },
     { name: 'Contáctanos', href: '/contacto', id: 'contact' },
     { name: 'Ubicación', href: '/ubicacion', id: 'ubication' },
 ]
