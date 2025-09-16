@@ -22,7 +22,7 @@ const page = async ({ params }: PageProps) => {
                 gestion={serviceData.gestion}
             />
             <InfoAreas areaInfo={areaInfo} />
-            <ClientTestimonials />
+            {/* <ClientTestimonials /> */}
         </>
     )
 }
