@@ -1,4 +1,4 @@
-import { navigationLinkMobile } from '@/helpers/nav';
+import { navigationLinkMobile, scrollToSection } from '@/helpers/nav';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
@@ -28,7 +28,10 @@ const Drawer = ({ isOpen, toggleDrawer }: DrawerProps) => {
           {
             navigationLinkMobile.map((link) => (
               <li key={link.name} className='text-features font-quicksand' >
-                <Link href={link.href} onClick={toggleDrawer}>{link.name}</Link>
+                <button  onClick={()=>{
+                  toggleDrawer();
+                  scrollToSection(link.id);
+                }}>{link.name}</button>
               </li>
             ))
           }

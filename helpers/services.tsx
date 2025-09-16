@@ -6,6 +6,7 @@ const SERVICES = {
 
 export const getServiceInfo = {
     [SERVICES.ADMIN]: {
+        id: "admin",
         title: "Área Administrativa",
         image: "/img/admin.webp",
         description: "La administración eficiente de copropiedades y empresas requiere confianza, responsabilidad y soluciones prácticas. Nuestro equipo ofrece una gestión integral que asegura la sostenibilidad, el crecimiento y la convivencia armónica en cada proyecto.",
@@ -86,6 +87,7 @@ export const getServiceInfo = {
         principios: "Trabajamos bajo valores que garantizan confianza y transparencia en la administración, promoviendo la función social y ecológica de la propiedad, la sostenibilidad económica y la responsabilidad social al respecto por los dignos derechos humanos. Siempre buscamos soluciones responsables y transparentes para cada caso."
     },
     [SERVICES.CONTABLE]: {
+        id: "contable",
         title: "Área Contable",
         image: "/img/juridica.webp",
         description: "Gestión contable, soluciones y revisoría fiscal para garantizar transparencia, cumplimiento normativo y objetivos financieros organizacionales.",
@@ -142,6 +144,7 @@ export const getServiceInfo = {
         principios: "Trabajamos bajo valores que garantizan confianza y transparencia en la administración, promoviendo la función social y ecológica de la propiedad, la sostenibilidad económica y la responsabilidad social al respecto por los dignos derechos humanos. Siempre buscamos soluciones responsables y transparentes para cada caso."
     },
     [SERVICES.JURIDICA]: {
+        id: "juridica",
         title: "Área Jurídica",
         image: "/img/juridica.webp",
         description: "Nuestra experiencia abarca distintas ramas del derecho, ofreciendo soluciones integrales y confiables.",
