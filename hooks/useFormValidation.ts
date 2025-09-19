@@ -28,5 +28,10 @@ export const useFormValidation = <T extends Record<string, string>>(
     return Object.keys(newErrors).length === 0;
   };
 
-  return { values, errors, handleChange, validate, setValues };
+  const resetForm = () => {
+  setValues(initialState);
+  setErrors({});
+};
+
+  return { values, errors, handleChange, validate, setValues, resetForm };
 };

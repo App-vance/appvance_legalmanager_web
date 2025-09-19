@@ -60,7 +60,6 @@ const Notices = ({ notices }: NoticesProps) => {
             </div>
           </div>
           <div className="w-full flex flex-col mt-10 lg:w-1/2 lg:gap-8 lg:mt-0 xl:w-2/5">
-            <p className="hidden lg:!block lg:order-2 lg:text-white lg:text-body lg:font-quicksand font-bold">Accede a todas las noticias haciendo <span className="underline">clic aquí</span></p>
             {notices.map((notice, index) => (
               <CardNotice key={index} order={index} date={notice.date} description={notice.description} sys={notice.sys} img={notice.img} tittle={notice.tittle} />
             ))}

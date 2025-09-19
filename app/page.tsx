@@ -6,6 +6,8 @@ import Team from "@/modules/Team";
 import TeamCarousel from "@/modules/TeamCarousel";
 import Notices from "@/modules/Notices";
 import { getNewsList } from "@/lib/new";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default async function Home() {
   const items = await getNewsList(20);
@@ -32,8 +34,9 @@ export default async function Home() {
         <TeamCarousel />
       </section>
       <section id="notices">
-        <Notices notices={items} />
+        <Notices notices={items.slice(0, 4)} />
       </section>
+      <ToastContainer />
     </>
   );
 }

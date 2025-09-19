@@ -8,6 +8,7 @@ import Image from 'next/image'
 import { navigationLinks } from '@/helpers/nav'
 import Drawer from '@/components/Drawer'
 import Link from 'next/link'
+import { redirect, RedirectType } from 'next/navigation'
 import { scrollToSection } from '@/helpers/nav'
 import { getServiceInfo } from '@/helpers/services'
 
@@ -49,7 +50,7 @@ const Header = () => {
                 key={link.name}
                 className="
                   relative inline-block text-body font-quicksand
-                  before:content-[''] before:absolute before:inset-0 before:cursor-pointer before:bg-secondary-blue before:rounded-lg
+                  before:content-[''] before:absolute before:w-[calc(100%+10px)] before:-left-1.5 before:h-[calc(100%+10px)] before:-top-1 before:cursor-pointer before:bg-secondary-blue before:rounded-lg
                   before:opacity-0 hover:before:opacity-100
                   before:transition-opacity before:duration-300
                 "
