@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Button from "@/components/Button";
+import Link from 'next/link';
 
 interface Sys {
   id: string;
@@ -50,10 +51,12 @@ const CardNotice = ({ order, date, description, img, sys, tittle }:Notice) => {
             <span className='text-small text-primary-blue lg:text-white'>{setDateNotice(date)}</span>
             <h1 className='text-features text-secondary-blue lg:text-white'>{tittle}</h1>
             <p className='text-center text-small lg:text-white lg:text-start lg:line-clamp-2 xl:line-clamp-3'>{description}</p>
-            <Button
-              text="Más información aquí"
-              customClass="justify-center w-fit mx-auto md:mx-12 text-button ring ring-secondary-blue bg-white !text-secondary-blue lg:ring-0 lg:!bg-gray lg:!text-white transition-colors hover:!bg-secondary-blue hover:lg:!text-white active:bg-secondary-blue active:lg:!bg-gray active:!text-white lg:mx-0"
-            />
+            <Link href={`/noticias/${sys?.id}`}>
+              <Button
+                text="Más información aquí"
+                customClass="justify-center w-fit mx-auto md:mx-12 text-button ring ring-secondary-blue bg-white !text-secondary-blue lg:ring-0 lg:!bg-gray lg:!text-white transition-colors hover:!bg-secondary-blue hover:lg:!text-white active:bg-secondary-blue active:lg:!bg-gray active:!text-white lg:mx-0"
+              />
+            </Link>
           </div>
         </div>
       </div>
