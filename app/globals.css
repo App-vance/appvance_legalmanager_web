@@ -5,6 +5,10 @@
   --foreground: #171717;
 }
 
+@theme  {
+  --breakpoint-xl: 90rem;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -86,7 +90,7 @@ html {
   }
 
   .text-body {
-    @apply tracking-normal font-medium text-[1rem] leading-[1.125rem] md:text-lg md:leading-6 xl:text-xl lg:leading-6;
+    @apply tracking-normal font-medium text-[1rem] leading-[1.125rem] md:text-lg md:leading-6 xl:!text-xl lg:leading-6;
   }
 
   .text-body-secondary {

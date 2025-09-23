@@ -1,4 +1,5 @@
 import Hero from "@/modules/Hero";
+import Reports from "@/modules/Reports";
 import Info from "@/modules/Info";
 import Services from "@/modules/Services";
 import About from "@/modules/About";
@@ -17,6 +18,9 @@ export default async function Home() {
     <>
       <section>
         <Hero />
+      </section>
+      <section>
+        <Reports />
       </section>
       <section>
         <Info />
