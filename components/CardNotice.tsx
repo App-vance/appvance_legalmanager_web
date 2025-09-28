@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Button from "@/components/Button";
 import Link from 'next/link';
+import { getDateWithDay } from "@/lib/date";
 
 interface Sys {
   id: string;
@@ -23,17 +24,6 @@ interface Notice {
   img: Image;
 }
 
-const setDateNotice = (dateString: string) => {
-  const date = new Date(dateString);
-
-  const day = date.getUTCDate();
-  const month = date.toLocaleString("es-ES", { month: "long" });
-  const year = date.getUTCFullYear();
-
-  const capitalizedMonth = month.charAt(0).toUpperCase() + month.slice(1);
-
-  return `${day} ${capitalizedMonth}, ${year}`;
-};
 const CardNotice = ({ order, date, description, img, sys, tittle }:Notice) => {
   return (
     <>
@@ -48,7 +38,7 @@ const CardNotice = ({ order, date, description, img, sys, tittle }:Notice) => {
         </div>
         <div className='p-8 last:lg:pb-0 lg:p-0'>
           <div className='flex flex-col gap-4 justify-center items-center font-quicksand pb-10 border-b border-gray lg:border-none lg:items-start lg:pb-0 lg:gap-2 xl:gap-4'>
-            <span className='text-small text-primary-blue lg:text-white'>{setDateNotice(date)}</span>
+            <span className='text-small text-primary-blue lg:text-white'>{getDateWithDay(date)}</span>
             <h1 className='text-features text-secondary-blue lg:text-white'>{tittle}</h1>
             <p className='text-center text-small lg:text-white lg:text-start lg:line-clamp-2 xl:line-clamp-3'>{description}</p>
             <Link href={`/noticias/${sys?.id}`}>

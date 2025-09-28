@@ -3,6 +3,7 @@
 
 import Carousel from "@/components/Carousel";
 import SectionIntro from "@/components/SectionIntro";
+import { getDateWithDay } from "@/lib/date";
 
 interface Sys {
   id: string;
@@ -18,24 +19,14 @@ type Notice = {
 };
 
 const NoticesClient = ({ notices, notice }: { notices: Notice[]; notice: Notice }) => {
-  const setDateNotice = (dateString: string) => {
-    const date = new Date(dateString);
-    const day = date.getUTCDate();
-    const month = date.toLocaleString("es-ES", { month: "long" });
-    const year = date.getUTCFullYear();
-    const capitalizedMonth = month.charAt(0).toUpperCase() + month.slice(1);
-    return `${day} ${capitalizedMonth}, ${year}`;
-  };
-
   const noticesWeb = notices.filter((not) => not.sys.id !== notice.sys.id).slice(0, 3);
-  
 
   return (
     <section>
-      <div className="px-8 py-14 lg:py-20 lg:px-24">
+      <div className="px-8 py-14 lg:py-20 lg:px-24 xl:px-56 xl:py-28">
         <div className="space-y-6">
           <p className="text-body text-secondary-blue font-quicksand">
-            {setDateNotice(notice.date)}
+            {getDateWithDay(notice.date)}
           </p>
           <h2 className="text-subtitle text-primary-blue font-inter">
             {notice.tittle}
@@ -62,7 +53,7 @@ const NoticesClient = ({ notices, notice }: { notices: Notice[]; notice: Notice 
       ></div>
 
       {/* Descripción */}
-      <div className="bg-blue-light px-8 py-10 font-quicksand lg:bg-white">
+      <div className="bg-blue-light px-8 py-10 font-quicksand lg:bg-white lg:py-20 lg:px-24 xl:px-56 xl:py-28">
         <SectionIntro
           title="Aquí encontrará todo lo que necesita saber."
           titleClass="text-primary-blue text-features"
@@ -72,7 +63,7 @@ const NoticesClient = ({ notices, notice }: { notices: Notice[]; notice: Notice 
       </div>
 
       {/* Más noticias */}
-      <div className="px-8 py-14 lg:bg-blue-light lg:py-20 lg:px-24">
+      <div className="px-8 py-14 lg:bg-blue-light lg:py-20 lg:px-24 xl:px-56 xl:py-28">
         <h1 className="text-primary-blue text-subtitle lg:mb-10">Últimas noticias</h1>
         <section className="lg:hidden">
           <Carousel<Notice>
@@ -87,7 +78,7 @@ const NoticesClient = ({ notices, notice }: { notices: Notice[]; notice: Notice 
                   className="w-full h-[15.625rem] object-cover mb-8 rounded-lg"
                 />
                 <p className="text-body text-secondary-blue mb-6">
-                  {setDateNotice(item.date)}
+                  {getDateWithDay(item.date)}
                 </p>
                 <span className="text-features text-primary-blue">
                   {item.tittle}
@@ -105,7 +96,7 @@ const NoticesClient = ({ notices, notice }: { notices: Notice[]; notice: Notice 
                   alt={item.tittle}
                   className="w-96 h-[18.75rem] object-cover rounded-lg mb-8"
                 />
-                <span className="text-body text-secondary-blue mb-6">{setDateNotice(item.date)}</span>
+                <span className="text-body text-secondary-blue mb-6">{getDateWithDay(item.date)}</span>
                 <span className="text-features text-primary-blue">
                   {item.tittle}
                 </span>

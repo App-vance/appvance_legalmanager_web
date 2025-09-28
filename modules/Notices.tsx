@@ -1,5 +1,6 @@
 import CardNotice from "@/components/CardNotice";
 import Button from "@/components/Button";
+import { getDateWithDay } from "@/lib/date";
 
 interface Sys {
   id: string;
@@ -25,18 +26,6 @@ interface NoticesProps {
   notices: Notice[];
 };
 
-const setDateNotice = (dateString: string) => {
-  const date = new Date(dateString);
-
-  const day = date.getUTCDate();
-  const month = date.toLocaleString("es-ES", { month: "long" });
-  const year = date.getUTCFullYear();
-
-  const capitalizedMonth = month.charAt(0).toUpperCase() + month.slice(1);
-
-  return `${day} ${capitalizedMonth}, ${year}`;
-};
-
 const Notices = ({ notices }: NoticesProps) => {
   const latestNew = notices[0];
   return (
@@ -50,7 +39,7 @@ const Notices = ({ notices }: NoticesProps) => {
         <div className="flex lg:gap-8 lg:mt-10">
           <div className="hidden lg:relative lg:flex lg:flex-1 lg:justify-start lg:items-center lg:rounded-lg lg:bg-cover lg:bg-center lg:p-4 xl:pl-10 lg:w-1/2 xl:w-3/5" style={{ backgroundImage: `url(${latestNew?.img?.url})` }}>
             <div className="lg:max-w-96 lg:bg-white lg:rounded-lg lg:p-8 lg:flex lg:flex-col lg:gap-4 lg:font-quicksand">
-              <span className='lg:text-small lg:text-secondary-blue'>{setDateNotice(latestNew.date)}</span>
+              <span className='lg:text-small lg:text-secondary-blue'>{getDateWithDay(latestNew.date)}</span>
               <h1 className='text-features'>{latestNew.tittle}</h1>
               <p className='lg:text-small lg:text-start lg:line-clamp-8'>{latestNew.description}</p>
               <Button
