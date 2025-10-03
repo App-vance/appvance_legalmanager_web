@@ -1,0 +1,28 @@
+import React from 'react'
+
+type ButtonProps = {
+  text: string;
+  customClass: string;
+  onClick?: () => void;
+  icon?: React.ReactNode;
+};
+
+
+const Button = ({
+  text,
+  customClass = '',
+  onClick,
+  icon
+}: ButtonProps) => {
+  return (
+    <button
+      className={`font-quicksand bg-secondary-blue text-white text-body px-6 lg:px-8 py-3 rounded-lg flex items-center gap-4 cursor-pointer ${customClass}`}
+      onClick={onClick}
+    >
+      {icon}
+      {text}
+    </button>
+  )
+}
+
+export default Button

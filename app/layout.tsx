@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Quicksand, Inter } from "next/font/google";
 import "./globals.css";
+import Footer from "@/modules/Footer";
+import Header from "@/modules/Header";
+import ConsultForm from "@/modules/ConsultForm";
+import ScrollUp from "@/components/ScrollUp";
+import SocialMedia from "@/components/SocialMedia";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const quicksand = Quicksand({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-quicksand",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +32,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${quicksand.variable} ${inter.variable} antialiased`}
       >
+        <section>
+          <Header />
+        </section>
         {children}
+        <section id="contact">
+          <ConsultForm />
+        </section>
+        <section id="ubication">
+          <Footer />
+        </section>
+        <ScrollUp />
+        <SocialMedia />
       </body>
     </html>
   );

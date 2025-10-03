@@ -5,52 +5,103 @@
   --foreground: #171717;
 }
 
+@theme  {
+  --breakpoint-xl: 90rem;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-quicksand: var(--font-quicksand);
+  --font-inter: var(--font-inter);
   --color-primary-blue: #001970;
   --color-secondary-blue: #155DFC;
   --color-gray: #8A8A8A;
   --color-orange: #E8911F;
-}
-
-@layer utilities {
-  .text-title {
-    @apply text-[2rem] font-extrabold leading-[6.875rem] md:text-[4rem];
-  }
-
-  .text-subtitle {
-    @apply text-[1.5rem] font-semibold leading-[6.875rem] md:text-[2.25rem];
-  }
-
-  .text-features {
-    @apply text-[1.25rem] font-bold leading-[5rem] md:text-[1.5rem];
-  }
-
-  .text-body {
-    @apply text-[1rem] font-medium leading-[6.25rem] md:tet-[1.25rem];
-  }
-
-  .text-body-secondaty {
-    @apply text-[1.125rem] font-normal leading-[2.5rem];
-  }
-
-  .text-button {
-    @apply text-[1rem] font-bold leading-[6.25rem] md:text-[1.25rem];
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-blue-light: #F1FAFF;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hero-bg {
+  background-image: url('/img/hero.jpg');
+  height: 615px;
+  background-size: cover;
+  background-position: center;
+}
+
+.about-bg{
+  background-image: url('/img/about.jpg');
+  height: 680px;
+  background-size: cover;
+  background-position: center;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #1976d2 #e3eafc; /* thumb color, track color */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+  background: #e3eafc; /* track color */
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #1976d2; /* thumb color */
+  border-radius: 8px;
+}
+
+.text-area {
+  resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+}
+
+.select-button[type="radio"] {
+  accent-color: #1976d2; /* Usa el color que prefieras */
+}
+
+@media (max-width: 768px) {
+  .about-bg {
+    background-image: url('/img/about-mobile.jpg');
+    height: 350px;
+  }
+}
+
+@layer utilities {
+  .text-title {
+    @apply tracking-normal font-extrabold text-[2rem] leading-9 md:text-[3rem] md:leading-[3.5rem] xl:text-[4rem] xl:leading-[4.375rem];
+  }
+
+  .text-subtitle {
+    @apply tracking-normal font-semibold text-3xl leading-6 md:text-4xl md:leading-9 xl:text-4xl xl:leading-10;
+  }
+
+  .text-features {
+    @apply tracking-normal font-bold text-xl leading-[1.375rem] md:text-2xl md:leading-[1.75rem] xl:text-2xl xl:leading-[1.875rem];
+  }
+
+  .text-body {
+    @apply tracking-normal font-medium text-[1rem] leading-[1.125rem] md:text-lg md:leading-6 xl:!text-xl lg:leading-6;
+  }
+
+  .text-body-secondary {
+    @apply tracking-normal font-medium text-[1rem] leading-[1.125rem] md:text-lg md:leading-6;
+  }
+
+  .text-button {
+    @apply tracking-normal font-bold text-[1rem] leading-[1.125rem] md:text-lg md:leading-6 xl:text-xl xl:leading-6;
+  }
+
+  .text-small {
+    @apply tracking-normal text-sm font-medium leading-[1rem] md:text-base md:leading-[1.25rem];
+  }
 }
