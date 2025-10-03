@@ -1,6 +1,6 @@
 import { navigationLinkMobile, scrollToSection } from '@/helpers/nav';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
 type DrawerProps = {
@@ -9,6 +9,10 @@ type DrawerProps = {
 }
 
 const Drawer = ({ isOpen, toggleDrawer }: DrawerProps) => {
+
+    const router = useRouter();
+  
+    
   return (
     <div
       className={`fixed top-0 left-0 w-60 h-full py-10 pl-8 bg-primary-blue text-white transition-transform transform duration-1000 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"
@@ -30,7 +34,7 @@ const Drawer = ({ isOpen, toggleDrawer }: DrawerProps) => {
               <li key={link.name} className='text-features font-quicksand' >
                 <button  onClick={()=>{
                   toggleDrawer();
-                  scrollToSection(link.id);
+                  scrollToSection(link.id, router);
                 }}>{link.name}</button>
               </li>
             ))
