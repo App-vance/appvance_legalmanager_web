@@ -3,14 +3,11 @@
 import React, { useState } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
-
-
-import { navigationLinks } from '@/helpers/nav'
-import Drawer from '@/components/Drawer'
-import Link from 'next/link'
-import { redirect, RedirectType } from 'next/navigation'
-import { scrollToSection } from '@/helpers/nav'
-import { getServiceInfo } from '@/helpers/services'
+import { navigationLinks, navigateAndScrollToSection } from '@/helpers/nav';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import Drawer from '@/components/Drawer';
+import { getServiceInfo } from '@/helpers/services';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -19,6 +16,8 @@ const Header = () => {
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   }
+
+  const router = useRouter();
 
   return (
     <>
@@ -57,12 +56,11 @@ const Header = () => {
                 onMouseEnter={() => link.name === "Servicios" && setShowServices(true)}
               >
                 <button
-                  onClick={() => scrollToSection(link.id)}
+                  onClick={() => navigateAndScrollToSection(link.id, router)}
                   className="relative z-10 px-1 cursor-pointer"
                 >
                   {link.name}
                 </button>
-
 
                 {/* Recuadro con títulos de servicios */}
                 {link.name === "Servicios" && showServices && (

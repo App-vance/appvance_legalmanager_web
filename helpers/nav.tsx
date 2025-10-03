@@ -1,3 +1,5 @@
+'use client';
+
 export const navigationLinks = [
     { name: 'Servicios', href: '/servicios', id: 'services' },
     { name: 'Quiénes somos', href: '/nosotros', id: 'about' },
@@ -13,4 +15,14 @@ export const navigationLinkMobile = [
 
 export const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+};
+
+// Navega a la página principal y guarda el id de la sección
+export const navigateAndScrollToSection = (id: string, router: any, path:string = '/') => {
+    if (window.location.pathname !== '/') {
+        localStorage.setItem('scrollToSectionId', id);
+        router.push(path);
+    } else {
+        scrollToSection(id);
+    }
 };
