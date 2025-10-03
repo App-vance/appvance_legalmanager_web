@@ -3,9 +3,13 @@ import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import Image from 'next/image';
 import Link from "next/link";
 import { navigationLinks, scrollToSection } from "@/helpers/nav";
+import { useRouter } from 'next/navigation'
+
+
 
 const Footer = () => {
   const year = new Date().getFullYear();
+  const router = useRouter();
 
   return (
     <>
@@ -25,7 +29,7 @@ const Footer = () => {
             </div>
             {
               navigationLinks.map((link) => (
-                <button key={link.name} onClick={() => scrollToSection(link.id)} className='text-body lg:text-xl text-left cursor-pointer transition-colors duration-200 lg:w-fit hover:lg:bg-secondary-blue lg:rounded-lg'>{link.name}</button>
+                <button key={link.name} onClick={() => scrollToSection(link.id, router)} className='text-body lg:text-xl text-left cursor-pointer transition-colors duration-200 lg:w-fit hover:lg:bg-secondary-blue lg:rounded-lg'>{link.name}</button>
               ))
             }
             <div className="flex flex-col gap-5 lg:pt-4 lg:mb-6">
