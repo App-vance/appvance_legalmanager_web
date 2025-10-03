@@ -1,20 +1,26 @@
 import Hero from "@/modules/Hero";
+import Reports from "@/modules/Reports";
 import Info from "@/modules/Info";
 import Services from "@/modules/Services";
 import About from "@/modules/About";
 import Team from "@/modules/Team";
 import TeamCarousel from "@/modules/TeamCarousel";
+import Notices from "@/modules/Notices";
 import { getNewsList } from "@/lib/new";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default async function Home() {
   const items = await getNewsList(20);
-  console.log(items);
 
 
   return (
     <>
       <section>
         <Hero />
+      </section>
+      <section>
+        <Reports />
       </section>
       <section>
         <Info />
@@ -31,6 +37,10 @@ export default async function Home() {
       <section id="team">
         <TeamCarousel />
       </section>
+      <section id="notices">
+        <Notices notices={items.slice(0, 4)} />
+      </section>
+      <ToastContainer />
     </>
   );
 }

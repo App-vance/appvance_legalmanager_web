@@ -1,13 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Button from "@/components/Button";
 import { useFormValidation } from "@/hooks/useFormValidation";
 import { sendEmail, TemplateParams } from "@/services/email-service";
 import SectionIntro from "@/components/SectionIntro";
+import { showToast } from "@/helpers/toast";
 
 const ConsultForm = () => {
-  const { values, errors, handleChange, validate } = useFormValidation(
+  const [loading, setLoading] = useState(false);
+  const { values, errors, handleChange, validate, resetForm } = useFormValidation(
     {
       name: "",
       email: "",
@@ -44,6 +46,7 @@ const ConsultForm = () => {
     const isValid = validate();
     if (!isValid) return;
 
+    setLoading(true);
     const formData = new FormData(e.currentTarget);
 
     let messageContent = "";
@@ -61,12 +64,13 @@ const ConsultForm = () => {
 
     try {
       await sendEmail('service_0b2yiq1', 'template_74uavx6', templateParams);
-      // setStatus("success");
+      showToast.success('Mensaje enviado ✅');
+      resetForm();
     } catch (error) {
       console.error(error);
-      // setStatus("error");
+      showToast.error('Error al enviar ❌');
     } finally {
-      // setLoading(false);
+      setLoading(false);
     }
   };
 
@@ -74,7 +78,7 @@ const ConsultForm = () => {
     <div className="font-quicksand">
       <form
         onSubmit={handleSubmit}
-        className="px-8 md:px-20 lg:px-56 py-14 lg:py-28 text-body flex gap-6 lg:gap-10 flex-col"
+        className="px-8 md:px-20 xl:px-56 py-14 lg:py-20 xl:py-28 text-body flex gap-6 lg:gap-10 flex-col"
       >
         <div className="flex lg:hidden">
           <SectionIntro title="Conversemos sobre tu necesidad" titleClass="text-subtitle text-primary-blue font-inter" description="Déjanos tus datos y un mensaje." descriptionClass="text-body text-primary-blue font-quicksand" />
@@ -260,7 +264,7 @@ const ConsultForm = () => {
           )}
         </div>
 
-        <Button text="Enviar mi consulta" customClass="w-fit !bg-gray hover:!bg-secondary-blue transition-colors" />
+        <Button text={loading ? "Enviando..." : "Enviar mi consulta"} customClass="w-fit !bg-gray hover:!bg-secondary-blue transition-colors" />
       </form>
     </div>
   );
