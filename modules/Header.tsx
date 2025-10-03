@@ -8,6 +8,7 @@ import Image from 'next/image'
 import { navigationLinks } from '@/helpers/nav'
 import Drawer from '@/components/Drawer'
 import Link from 'next/link'
+import { redirect, RedirectType } from 'next/navigation'
 import { scrollToSection } from '@/helpers/nav'
 import { getServiceInfo } from '@/helpers/services'
 
@@ -21,7 +22,7 @@ const Header = () => {
 
   return (
     <>
-      <header className='flex justify-between px-8 py-10 md:px-20 lg:px-56 items-center bg-[#001970] text-white text-body lg:py-11 relative'>
+      <header className='flex justify-between px-8 py-10 md:px-20 xl:px-56 items-center bg-[#001970] text-white text-body lg:py-11 relative'>
         <div className='w-44 h-9 lg:w-52 relative'>
           <Link href="/">
             <Image
@@ -49,7 +50,7 @@ const Header = () => {
                 key={link.name}
                 className="
                   relative inline-block text-body font-quicksand
-                  before:content-[''] before:absolute before:inset-0 before:cursor-pointer before:bg-secondary-blue before:rounded-lg
+                  before:content-[''] before:absolute before:w-[calc(100%+10px)] before:-left-1.5 before:h-[calc(100%+10px)] before:-top-1 before:cursor-pointer before:bg-secondary-blue before:rounded-lg
                   before:opacity-0 hover:before:opacity-100
                   before:transition-opacity before:duration-300
                 "

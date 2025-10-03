@@ -4,12 +4,12 @@ import React, { useState } from "react";
 import Button from "@/components/Button";
 import { sendEmail, TemplateParams } from "@/services/email-service";
 import { useFormValidation } from "@/hooks/useFormValidation";
+import { showToast } from "@/helpers/toast";
 
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState<string | null>(null);
 
-  const { values, errors, handleChange, validate } = useFormValidation(
+  const { values, errors, handleChange, validate, resetForm } = useFormValidation(
     { name: "", phone: "" },
     {
       name: (val) => (!val.trim() ? "El nombre es obligatorio" : null),
@@ -43,10 +43,11 @@ const ContactForm = () => {
 
     try {
       await sendEmail('service_0b2yiq1', 'template_74uavx6', templateParams);
-      setStatus("success");
+      showToast.success('Mensaje enviado ✅');
+      resetForm();
     } catch (error) {
       console.error(error);
-      setStatus("error");
+      showToast.error('Error al enviar ❌');
     } finally {
       setLoading(false);
     }
@@ -95,11 +96,6 @@ const ContactForm = () => {
         text={loading ? "Enviando..." : "Contacto urgente"}
         customClass="text-button bg-secondary-blue mb-3 mt-6"
       />
-
-      {status === "success" && (
-        <p className="text-green-600">Mensaje enviado ✅</p>
-      )}
-      {status === "error" && <p className="text-red-600">Error al enviar ❌</p>}
 
       <p className="text-sm text-gray-600 mt-2">
         O conoce nuestros servicios primero.

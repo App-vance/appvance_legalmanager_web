@@ -46,7 +46,7 @@ const Team = () => {
           />
         </div>
       </div>
-      <div className="flex w-full gap-10">
+  <div className="flex w-full gap-10 justify-between">
         <CardTeam
           name="Adriana María Sánchez Murillo"
           position="Contadora"
