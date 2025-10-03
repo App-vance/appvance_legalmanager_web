@@ -42,7 +42,7 @@ const ContactForm = () => {
     };
 
     try {
-      await sendEmail('service_0b2yiq1', 'template_74uavx6', templateParams);
+      await sendEmail('service_0b2yiq1', 'template_0yq9oya', templateParams);
       showToast.success('Mensaje enviado ✅');
       resetForm();
     } catch (error) {
