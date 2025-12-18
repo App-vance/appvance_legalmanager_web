@@ -5,10 +5,17 @@ import { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import Link from 'next/link';
 
+interface Sys {
+  id: string;
+}
+
 type Notice = {
-  img?: { url: string };
+  sys: Sys;
+  date: string;
   tittle: string;
-  date: string;   // asume string como "2025‑10‑21T..." o similar
+  image: string;
+  description?: string;
+  img?: { url: string };
 };
 
 type CarouselLgProps = {
@@ -34,11 +41,11 @@ const CarouselLg = ({ items, itemsToShow = 4 }: CarouselLgProps) => {
   const currentItems = items.slice(startIndex, startIndex + visibleCount);
 
   const formatDate = (dateStr: string) => {
-  const d = new Date(dateStr);
-  const options: Intl.DateTimeFormatOptions = {
-    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
-  };
-  return d.toLocaleDateString('es', options);
+    const d = new Date(dateStr);
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+    };
+    return d.toLocaleDateString('es', options);
   };
 
   return (
@@ -46,8 +53,8 @@ const CarouselLg = ({ items, itemsToShow = 4 }: CarouselLgProps) => {
       {/* Contenedor de tarjetas */}
       <div className="grid grid-cols-4 gap-10 w-full">
         {currentItems.map((item, idx) => (
-          //<Link href={`/noticias/${item?.}`}>  /
-            <div key={idx} className=" cursor-pointer group flex flex-col">
+          <Link href={`/noticias/${item?.sys.id}`} key={idx}>
+            <div className=" cursor-pointer group flex flex-col">
               <img
                 src={item.img?.url}
                 alt={item.tittle}
@@ -60,13 +67,13 @@ const CarouselLg = ({ items, itemsToShow = 4 }: CarouselLgProps) => {
                 {item.tittle}
               </span>
             </div>
-          //</Link>//
+          </Link>
         ))}
       </div>
 
       {/* Flecha izquierda */}
-      
-      
+
+
       <button
         onClick={prev}
         className="absolute top-1/2 left-0 -translate-y-1/2 translate-x-[-5rem] p-3 rounded-lg cursor-pointer bg-slate-300 hover:bg-white transition z-10"
@@ -74,7 +81,7 @@ const CarouselLg = ({ items, itemsToShow = 4 }: CarouselLgProps) => {
         <ChevronLeftIcon className="w-6 h-6 text-primary-blue" />
       </button>
 
-      
+
       <button
         onClick={next}
         className="absolute top-1/2 right-0 -translate-y-1/2 -translate-x-[-5rem] p-3 rounded-lg cursor-pointer bg-slate-300 hover:bg-white transition z-10"

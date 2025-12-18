@@ -39,25 +39,27 @@ const Notices = async ({ params }: PageProps) => {
         </div>
       </div>
 
-      {/* Imagen */}
-      <div className="w-full relative">
-        <img
-          src={notice.img?.url}
-          alt={notice.tittle}
-          className="object-cover w-full h-full"
-          style={{ maxHeight: "600px" }}
-          sizes="(max-width: 1024px) 100vw, 80vw"
-        />
-      </div>
+      <div>
+        {/* Imagen */}
+        <div className="w-full relative lg:px-[30rem]">
+          <img
+            src={notice.img?.url}
+            alt={notice.tittle}
+            className="object-cover w-full h-full"
+            style={{ maxHeight: "600px" }}
+            sizes="(max-width: 1024px) 100vw, 80vw"
+          />
+        </div>
 
-      {/* Descripción */}
-      <div className="bg-blue-light px-8 py-10 font-quicksand lg:bg-white lg:py-20 lg:px-24 xl:px-56 xl:py-28">
-        <SectionIntro
-          title="Aquí encontrará todo lo que necesita saber."
-          titleClass="text-primary-blue text-features"
-          description={notice?.description}
-          descriptionClass="text-body-secondary"
-        />
+        {/* Descripción */}
+        <div className="bg-blue-light px-8 py-10 font-quicksand lg:bg-white lg:py-20 lg:px-24 xl:px-56 xl:py-28">
+          <SectionIntro
+            title="Aquí encontrará todo lo que necesita saber."
+            titleClass="text-primary-blue text-features"
+            description={notice?.description}
+            descriptionClass="text-body-secondary"
+          />
+        </div>
       </div>
 
       <NoticesCarousel notices={notices} notice={notice} />

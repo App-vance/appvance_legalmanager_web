@@ -57,31 +57,12 @@ const NoticesClient = ({
           )}
         />
       </section>
-        <div className="hidden lg:block">
-          <MultiItemCarousel<Notice>
-            items={noticesWeb}
-            itemsToShow={4}
-            height="h-[18.75rem]"
-            classname1="w-full"
-            classname2=""
-            classname3="flex gap-10"   // sustituye grid‑cols‑3 gap‑10
-            renderItem={(item, index) => (
-              <div key={index} className="group flex flex-col">
-                <img
-                  src={item.img?.url}
-                  alt={item.tittle}
-                  className="w-96 h-[18.75rem] object-cover rounded-lg mb-8"
-                />
-                <span className="text-body text-secondary-blue mb-6">
-                  {getDateWithDay(item.date)}
-                </span>
-                <span className="text-features text-primary-blue">
-                  {item.tittle}
-                </span>
-              </div>
-            )}
-          />
-        </div>
+      <div className="hidden lg:block">
+        <MultiItemCarousel
+          items={noticesWeb}
+          itemsToShow={4}
+        />
+      </div>
     </div>
   );
 };
