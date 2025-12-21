@@ -37,7 +37,7 @@ const InfoAreas = ({ areaInfo }: { areaInfo: AreaInfo }) => {
           {title && <SectionIntro title={title} titleClass="text-subtitle text-primary-blue font-inter" description={description} descriptionClass="text-body text-primary-blue font-quicksand" />}
         </div>
         {themes.length > 0 && (
-          <div className="flex gap-8 font-quicksand mb-10 lg:flex-wrap lg:justify-between">
+          <div className="flex gap-8 flex-col lg:flex-row font-quicksand mb-10 lg:flex-wrap lg:justify-between">
             {themes.map((theme, index) => (
               <div key={index} className="mb-6 lg:w-[45%]">
                 <SectionIntro title={theme.title} titleClass="text-subtitle text-primary-blue font-inter" description={theme.description} descriptionClass="text-body text-primary-blue font-quicksand" />
