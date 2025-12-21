@@ -29,7 +29,6 @@ interface Performance {
 
 const InfoAreas = ({ areaInfo }: { areaInfo: AreaInfo }) => {
   const { id, title, description, themes, subthemes, performance } = areaInfo;
-  console.log(areaInfo);
 
   return (
     <>
