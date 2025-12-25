@@ -1,17 +1,14 @@
-import Image from 'next/image';
-
 type CardTeamProps = {
   name: string;
   position: string;
-  image: string;
   qualifications: string[];
 }
 
-const CardCarousel = ({ name, position, image, qualifications }: CardTeamProps) => {
+const CardCarousel = ({ name, position, qualifications }: CardTeamProps) => {
   return (
     <>
-      <div className="font-quicksand bg-blue-light w-full h-full rounded-lg overflow-hidden">
-        <div className="relative w-full min-h-[13.125rem] max-h-[19.375rem]">
+      <div className="font-quicksand bg-blue-light w-full rounded-lg overflow-hidden">
+        {/* <div className="relative w-full min-h-[13.125rem] max-h-[19.375rem]">
           <Image
             src={image}
             alt={name}
@@ -19,7 +16,7 @@ const CardCarousel = ({ name, position, image, qualifications }: CardTeamProps) 
             className="object-cover rounded-lg object-[0%_10%]"
             priority
           />
-        </div>
+        </div> */}
         <div className="flex flex-col items-center justify-center mt-4">
           <h1 className="text-features mb-3">{name}</h1>
           <div className="bg-secondary-blue w-full text-center text-white text-body py-1 mb-5">{position}</div>
