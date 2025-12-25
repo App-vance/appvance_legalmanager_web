@@ -4,6 +4,7 @@ import { PhoneIcon } from "@heroicons/react/24/outline";
 
 import Button from "@/components/Button";
 import ContactForm from "@/modules/ContactForm";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -15,12 +16,13 @@ const Hero = () => {
         <h3 className="font-quicksand text-body max-w-3xs md:max-w-80 lg:max-w-full py-4 lg:pt-6 lg:pb-9 lg:text-[1rem] lg:font-semibold lg:leading-[24px]">
           Asesoría integral en las principales áreas del derecho.
         </h3>
-        <Button
-          text="Contáctate aquí"
-          customClass="text-button !bg-gray hover:!bg-secondary-blue transition-colors"
-          icon={<PhoneIcon className="h-6 w-6" />}
-          onClick={() => console.log("Solicitar asesoría clicked")}
-        />
+        <Link href="https://api.whatsapp.com/send?phone=573145900228&text=Me%20interesa%20contar%20con%20sus%20servicios" target="_blank" rel="noopener noreferrer">
+          <Button
+            text="Contáctate aquí"
+            customClass="text-button !bg-gray hover:!bg-secondary-blue transition-colors"
+            icon={<PhoneIcon className="h-6 w-6" />}
+          />
+        </Link>
       </div>
       <div className="hidden font-quicksand lg:flex flex-col lg:p-12 xl:py-16 xl:px-20 bg-white rounded-lg shadow-lg h-[450px] w-[512px] gap-6">
         <h3 className="text-primary-blue text-features">

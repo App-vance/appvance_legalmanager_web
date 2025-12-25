@@ -17,13 +17,13 @@ const TeamCarousel = () => {
     <Carousel<TeamMember>
       classname1="lg:hidden"
       classname2="py-10 px-8 md:px-36"
-      classname3="w-full flex flex-col items-center justify-between bg-white rounded-2xl"
+      classname3="w-full flex flex-col items-center bg-white rounded-2xl"
+      height="h-[32rem]"
       items={team}
       renderItem={(item) => (
         <CardCarousel
           name={item.name}
           position={item.position}
-          image={item.image}
           qualifications={item.qualifications}
         />
       )}
