@@ -16,6 +16,9 @@ const ConsultForm = () => {
       phone: "",
       interest: "",
       message: "",
+      direction: "",
+      estrato: "",
+      numberApartments: "",
       priority: "",
       terms: "",
     },
@@ -57,6 +60,10 @@ const ConsultForm = () => {
     messageContent += `<p><strong>Área de interés:</strong> ${formData.get("interest")}</p>`;
     messageContent += `<p><strong>Descripción del caso:</strong> ${formData.get("message")}</p>`;
     messageContent += `<p><strong>Prioridad:</strong> ${formData.get("priority")}</p>`;
+    // opcionales
+    messageContent += `<p><strong>Dirección Propiedad:</strong> ${formData.get("direction") || "-"}</p>`;
+    messageContent += `<p><strong>Estrato:</strong> ${formData.get("estrato") || "-"}</p>`;
+    messageContent += `<p><strong>Número de apartamentos:</strong> ${formData.get("numberApartments") || "-"}</p>`;
 
     const templateParams: TemplateParams = {
       message: messageContent, // 🔑 ahora solo un campo
@@ -189,6 +196,46 @@ const ConsultForm = () => {
                 d="M19 9l-7 7-7-7"
               />
             </svg>
+          </div>
+        </div>
+
+        {/* Campos opcionales */}
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-9">
+          <div className="flex-1">
+            <label htmlFor="direction">Dirección</label>
+            <input
+              className="border rounded-md px-4 py-2.5 w-full text-gray outline-secondary-blue/30 mt-3 border-gray-300"
+              type="text"
+              id="direction"
+              name="direction"
+              placeholder="Escribe tu dirección (opcional)"
+              value={values.direction ?? ""}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="estrato">Estrato</label>
+            <input
+              className="border rounded-md px-4 py-2.5 w-full text-gray outline-secondary-blue/30 mt-3 border-gray-300"
+              type="text"
+              id="estrato"
+              name="estrato"
+              placeholder="Estrato (opcional)"
+              value={values.estrato ?? ""}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="numberApartments">Número de apartamentos</label>
+            <input
+              className="border rounded-md px-4 py-2.5 w-full text-gray outline-secondary-blue/30 mt-3 border-gray-300"
+              type="text"
+              id="numberApartments"
+              name="numberApartments"
+              placeholder="Cantidad de aptos (opcional)"
+              value={values.numberApartments ?? ""}
+              onChange={handleChange}
+            />
           </div>
         </div>
 
